@@ -20,7 +20,8 @@ def play_new_game():
     attributes = {
         "questions": questions,
         "score": 0,
-        "current_question_index": 0
+        "current_question_index": 0,
+        "game_length": len(questions)
     }
     return speech(speech_output, attributes, should_end_session)
 
