@@ -11,6 +11,7 @@ from brain_training import QUESTIONS
 
 def play_new_game():
     """play new game intro and build question bank for the session"""
+    print("=====play_new_game fired...")
     new_game_message = "Welcome to Train That Brain!  I'll give you ten "\
     "questions within about sixty seconds for you to answer.  Answer "\
     "as fast as you can.  Starting in...  3... 2... 1..."
@@ -27,6 +28,7 @@ def play_new_game():
 
 def pick_random_questions(num_categories, num_questions):
     """pick random questions from the bank to form the game"""
+    print("=====pick_random_questions fired...")
     categories = random.sample(list(QUESTIONS), k=num_categories)
     questions = []
     for category in categories:

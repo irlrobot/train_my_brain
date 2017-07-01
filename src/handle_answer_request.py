@@ -9,6 +9,7 @@ from alexa_responses import speech
 
 def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""
+    print("=====handle_answer_request fired...")
     attributes = {}
     should_end_session = False
     answer = intent['slots'].get('CatchAllAnswer', {}).get('value')
