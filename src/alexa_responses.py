@@ -8,7 +8,8 @@ from __future__ import print_function
 
 def speech(tts, attributes, should_end_session):
     '''build speech output'''
-    return {
+    print("======speech fired...")
+    response = {
         "version": "1.0",
         'sessionAttributes': attributes,
         "response": {
@@ -19,10 +20,13 @@ def speech(tts, attributes, should_end_session):
         },
         "shouldEndSession": should_end_session
     }
+    print("=====response:  \n" + response)
+    return response
 
 def speech_with_card(tts, attributes, should_end_session, card_title, card_text, image_small, image_large):
     '''build speech output with a card'''
-    return {
+    print("======speech_with_card fired...")
+    response = {
         "version": "1.0",
         'sessionAttributes': attributes,
         "response": {
@@ -42,3 +46,6 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text,
         },
         "shouldEndSession": should_end_session
     }
+
+    print("=====response:  \n" + response)
+    return response
