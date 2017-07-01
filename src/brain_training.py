@@ -47,17 +47,17 @@ QUESTIONS = [
         "simple_math": [
             {
                 "id": 1,
-                "question": "What does 4 plus 8 minus 2 equal?",
+                "question": "What does 4... plus... 8... minus... 2... equal?",
                 "answer": "10"
             },
             {
                 "id": 2,
-                "question": "What does 3 minus 2 minus 3 plus 2 equal?",
+                "question": "What does 3... minus... 2... minus... 3... plus... 2... equal?",
                 "answer": "0"
             },
             {
                 "id": 3,
-                "question": "What does 10 times 2 plus 5 minus 1 equal?",
+                "question": "What does 10... times... 2... plus... 5... minus... 1... equal?",
                 "answer": "24"
             }
         ]
