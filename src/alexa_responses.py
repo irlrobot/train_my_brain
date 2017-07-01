@@ -6,7 +6,7 @@ github.com/irlrobot/train_that_brain
 """
 from __future__ import print_function
 
-def speech(tts, attributes, end_session):
+def speech(tts, attributes, should_end_session):
     '''build speech output'''
     return {
         "version": "1.0",
@@ -17,10 +17,10 @@ def speech(tts, attributes, end_session):
                 "text": tts
             }
         },
-        "shouldEndSession": end_session
+        "shouldEndSession": should_end_session
     }
 
-def speech_with_card(tts, attributes, end_session, card_title, card_text, card_img_sm, card_img_lg):
+def speech_with_card(tts, attributes, should_end_session, card_title, card_text, image_small, image_large):
     '''build speech output with a card'''
     return {
         "version": "1.0",
@@ -35,10 +35,10 @@ def speech_with_card(tts, attributes, end_session, card_title, card_text, card_i
                 "title": card_title,
                 "text": card_text,
                 "image": {
-                    "smallImageUrl": card_img_sm,
-                    "largeImageUrl": card_img_lg
+                    "smallImageUrl": image_small,
+                    "largeImageUrl": image_large
                 }
             }
         },
-        "shouldEndSession": end_session
+        "shouldEndSession": should_end_session
     }
