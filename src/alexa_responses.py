@@ -20,7 +20,7 @@ def speech(tts, attributes, should_end_session):
         },
         "shouldEndSession": should_end_session
     }
-    print("=====response:  \n" + response)
+    print("=====response:  \n" + str(response))
     return response
 
 def speech_with_card(tts, attributes, should_end_session, card_title, card_text, image_small, image_large):
@@ -47,5 +47,5 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text,
         "shouldEndSession": should_end_session
     }
 
-    print("=====response:  \n" + response)
+    print("=====response:  \n" + str(response))
     return response
