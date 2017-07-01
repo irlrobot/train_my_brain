@@ -5,7 +5,7 @@ v1.0.0
 github.com/irlrobot/train_that_brain
 """
 from __future__ import print_function
-from alexa_responses import speech
+from alexa_responses import speech, speech_with_card
 
 def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""
@@ -29,10 +29,7 @@ def handle_answer_request(intent, session):
         answer_output = "WRONG!"
 
     if current_question_index == game_length - 1:
-        speech_output = answer_output + "Training complete.  You got  " + \
-            str(current_score) + " points.  Feel smarter yet?"
-        should_end_session = True
-        return speech(speech_output, attributes, should_end_session)
+        end_game_return_score(answer_output, current_score, attributes)
 
     current_question_index += 1
     speech_output = answer_output + "Next question in 3... 2... 1..." +\
@@ -45,3 +42,12 @@ def handle_answer_request(intent, session):
     }
 
     return speech(speech_output, attributes, should_end_session)
+
+def end_game_return_score(answer_output, current_score, attributes):
+    """if the customer answered the last question end the game"""
+    speech_output = answer_output + "Brain Training complete.  You got  " + \
+        str(current_score) + " points.  Feel smarter yet?"
+    card_text = "Your score is " + str(current_score) + " points!"
+    should_end_session = True
+    return speech_with_card(speech_output, attributes, should_end_session,
+                            "Train That Brain Results", card_text)
