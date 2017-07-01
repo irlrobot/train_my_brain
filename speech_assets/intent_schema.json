@@ -1,0 +1,16 @@
+{
+  "intents": [
+    {
+      "intent": "GameIntent"
+    },
+    {
+      "intent": "AnswerIntent",
+      "slots": [
+        {
+          "name": "CatchAllAnswer",
+          "type": "ANSWER_LIST"
+        }
+      ]
+    }
+  ]
+}

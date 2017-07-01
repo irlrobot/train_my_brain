@@ -1,0 +1,22 @@
+GameIntent to start a game
+GameIntent to start a session
+GameIntent to start training
+GameIntent to start a game
+GameIntent to start a session
+GameIntent to start training
+GameIntent to play a game
+GameIntent to play a session
+GameIntent to play training
+GameIntent to play a game
+GameIntent to play a session
+GameIntent to play training
+GameIntent to begin a game
+GameIntent to begin a session
+GameIntent to begin training
+GameIntent to begin a game
+GameIntent to begin a session
+GameIntent to begin training
+GameIntent for a game
+GameIntent for a session
+GameIntent for training
+AnswerIntent {CatchAllAnswer}
