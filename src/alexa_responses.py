@@ -11,14 +11,14 @@ def speech(tts, attributes, should_end_session):
     print("======speech fired...")
     response = {
         "version": "1.0",
-        'sessionAttributes': attributes,
+        "sessionAttributes": attributes,
         "response": {
+            "shouldEndSession": should_end_session,
             "outputSpeech": {
                 "type": "PlainText",
                 "text": tts
             }
-        },
-        "shouldEndSession": should_end_session
+        }
     }
     print("=====response:  \n" + str(response))
     return response
@@ -28,8 +28,9 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text,
     print("======speech_with_card fired...")
     response = {
         "version": "1.0",
-        'sessionAttributes': attributes,
+        "sessionAttributes": attributes,
         "response": {
+            "shouldEndSession": should_end_session,
             "outputSpeech": {
                 "type": "PlainText",
                 "text": tts
@@ -43,8 +44,7 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text,
                     "largeImageUrl": image_large
                 }
             }
-        },
-        "shouldEndSession": should_end_session
+        }
     }
 
     print("=====response:  \n" + str(response))
