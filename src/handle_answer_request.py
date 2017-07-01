@@ -11,7 +11,7 @@ def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""
     print("=====handle_answer_request fired...")
     attributes = {}
-    should_end_session = "false"
+    should_end_session = False
     answer = intent['slots'].get('CatchAllAnswer', {}).get('value')
 
     game_questions = session['attributes']['questions']
@@ -30,7 +30,7 @@ def handle_answer_request(intent, session):
     if current_questions_index == game_length:
         speech_output = answer_output + "Training complete.  You got  " + \
             current_score + " points.  Feel smarter yet?"
-        should_end_session = "true"
+        should_end_session = True
         return speech(speech_output, attributes, should_end_session)
 
     current_questions_index += 1
