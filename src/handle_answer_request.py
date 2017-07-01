@@ -13,12 +13,13 @@ def handle_answer_request(intent, session):
     attributes = {}
     should_end_session = False
     answer = intent['slots'].get('CatchAllAnswer', {}).get('value')
+    print("=====answer heard was:  " + answer)
 
     game_questions = session['attributes']['questions']
     game_length = session['attributes']['game_length']
     current_score = session['attributes']['score']
-    current_questions_index = session['attributes']['current_question_index']
-    correct_answer = game_questions[current_questions_index]['answer']
+    current_question_index = session['attributes']['current_question_index']
+    correct_answer = game_questions[current_question_index]['answer']
 
     answer_output = None
     if answer == correct_answer:
@@ -27,18 +28,17 @@ def handle_answer_request(intent, session):
     else:
         answer_output = "WRONG!"
 
-    if current_questions_index == game_length:
+    if current_question_index == game_length - 1:
         speech_output = answer_output + "Training complete.  You got  " + \
             current_score + " points.  Feel smarter yet?"
         should_end_session = True
         return speech(speech_output, attributes, should_end_session)
 
-    current_questions_index += 1
-
+    current_question_index += 1
     speech_output = answer_output + "Next question in 3... 2... 1..." +\
-        game_questions[current_questions_index]['question']
+        game_questions[current_question_index]['question']
     attributes = {
-        "current_questions_index": current_questions_index,
+        "current_question_index": current_question_index,
         "questions": game_questions,
         "score": current_score,
         "game_length": game_length
