@@ -15,7 +15,7 @@ def play_new_game():
     new_game_message = "Welcome to Train That Brain!  I'll give you ten "\
     "questions within about sixty seconds for you to answer.  Answer "\
     "as fast as you can.  Starting in...  3... 2... 1..."
-    questions = pick_random_questions(2, 2)
+    questions = pick_random_questions(1, 1)
     speech_output = new_game_message + questions[0]['question']
     should_end_session = False
     attributes = {
