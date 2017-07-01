@@ -17,7 +17,7 @@ def handle_answer_request(intent, session):
     game_questions = session['attributes']['questions']
     game_length = session['attributes']['game_length']
     current_score = session['attributes']['score']
-    current_questions_index = session['attributes']['current_questions_index']
+    current_questions_index = session['attributes']['current_question_index']
     correct_answer = game_questions[current_questions_index]['answer']
 
     answer_output = None
