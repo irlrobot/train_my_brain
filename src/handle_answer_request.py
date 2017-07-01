@@ -25,7 +25,7 @@ def handle_answer_request(intent, session):
     answer_output = None
     answered_correctly = None
     if answer == correct_answer:
-        current_score += 1
+        current_score += 10
         answer_output = "CORRECT!"
         answered_correctly = True
     else:
