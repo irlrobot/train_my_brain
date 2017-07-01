@@ -29,7 +29,7 @@ def handle_answer_request(intent, session):
         answer_output = "WRONG!"
 
     if current_question_index == game_length - 1:
-        end_game_return_score(answer_output, current_score, attributes)
+        return end_game_return_score(answer_output, current_score, attributes)
 
     current_question_index += 1
     speech_output = answer_output + "Next question in 3... 2... 1..." +\
