@@ -29,17 +29,17 @@ QUESTIONS = [
             {
                 "id": 1,
                 "question": "Spell the word Cats backwords.  Cats.",
-                "answer": "S T A C"
+                "answer": "STAC"
             },
             {
                 "id": 2,
                 "question": "Spell the word Puppy backwords.  Puppy.",
-                "answer": "Y P P U P"
+                "answer": "YPPUP"
             },
             {
                 "id": 3,
                 "question": "Spell the word Rabbit backwords.  Rabbit.",
-                "answer": "T I B B A R"
+                "answer": "TIBBAR"
             }
         ]
     },
