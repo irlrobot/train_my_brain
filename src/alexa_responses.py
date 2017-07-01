@@ -23,7 +23,7 @@ def speech(tts, attributes, should_end_session):
     print("=====response:  \n" + str(response))
     return response
 
-def speech_with_card(tts, attributes, should_end_session, card_title, card_text, image_small, image_large):
+def speech_with_card(tts, attributes, should_end_session, card_title, card_text):
     '''build speech output with a card'''
     print("======speech_with_card fired...")
     response = {
@@ -40,8 +40,8 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text,
                 "title": card_title,
                 "text": card_text,
                 "image": {
-                    "smallImageUrl": image_small,
-                    "largeImageUrl": image_large
+                    "smallImageUrl": "https://aws.userdel.com/train_that_brain_small.jpg",
+                    "largeImageUrl": "https://aws.userdel.com/train_that_brain_large.jpg"
                 }
             }
         }
