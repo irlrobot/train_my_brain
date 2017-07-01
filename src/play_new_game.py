@@ -16,12 +16,13 @@ def play_new_game():
     "as fast as you can.  Starting in...  3... 2... 1..."
     questions = pick_random_questions(2, 2)
     speech_output = new_game_message + questions[0]['question']
+    should_end_session = False
     attributes = {
         "questions": questions,
         "score": 0,
         "current_question_index": 0
     }
-    return speech(speech_output, attributes, True)
+    return speech(speech_output, attributes, should_end_session)
 
 def pick_random_questions(num_categories, num_questions):
     """pick random questions from the bank to form the game"""
