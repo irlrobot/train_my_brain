@@ -30,7 +30,7 @@ def handle_answer_request(intent, session):
 
     if current_question_index == game_length - 1:
         speech_output = answer_output + "Training complete.  You got  " + \
-            current_score + " points.  Feel smarter yet?"
+            str(current_score) + " points.  Feel smarter yet?"
         should_end_session = True
         return speech(speech_output, attributes, should_end_session)
 
