@@ -49,11 +49,16 @@ def on_intent(intent_request, session):
         return handle_answer_request(intent, session)
     if intent_name == "GameIntent":
         return play_new_game()
+    if intent_name == "AMAZON.StopIntent" or "AMAZON.CancelIntent":
+        return "Thanks for playing.  Please leave a review and let us know what you thought."
 
-def on_session_ended(session_ended_request, session):
-    """
-    Called when the user ends the session.
-    Is not called when the skill returns should_end_session=true
-    """
-    print("=====on_session_ended requestId=" + session_ended_request['requestId'] +
+def on_session_ended(event_request, session):
+    """when the user ends the session intentionally or timeout"""
+    print("=====on_session_ended requestId=" + event_request['requestId'] +
           ", sessionId=" + session['sessionId'])
+
+    # if there is a game in progress treat this as a time out move on to next question
+    if 'question' in session['attributes']:
+        handle_answer_request(event_request['intent'], session)
+
+    return "Thanks for playing.  Please leave a review and let us know what you thought."
