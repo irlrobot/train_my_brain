@@ -31,19 +31,19 @@ def on_session_started(session_started_request, session):
           session_started_request['requestId'] + ", sessionId=" +
           session['sessionId'])
 
-def on_launch(launch_request, session):
+def on_launch(event_request, session):
     """when customer launches the skill via modal"""
-    print("=====on_launch requestId:  " + launch_request['requestId'] +
+    print("=====on_launch requestId:  " + event_request['requestId'] +
           ", sessionId=" + session['sessionId'])
     return play_new_game()
 
-def on_intent(intent_request, session):
+def on_intent(event_request, session):
     """when customer launches the skill via modal"""
-    print("=====on_intent requestId:  " + intent_request['requestId'] +
+    print("=====on_intent requestId:  " + event_request['requestId'] +
           ", sessionId=" + session['sessionId'])
 
-    intent = intent_request['intent']
-    intent_name = intent_request['intent']['name']
+    intent = event_request['intent']
+    intent_name = event_request['intent']['name']
 
     if intent_name == "AnswerIntent":
         return handle_answer_request(intent, session)
@@ -57,8 +57,8 @@ def on_session_ended(event_request, session):
     print("=====on_session_ended requestId=" + event_request['requestId'] +
           ", sessionId=" + session['sessionId'])
 
-    # if there is a game in progress treat this as a time out move on to next question
-    if 'question' in session['attributes']:
+    # treat timeouts as a wrong answer and keep playing
+    if event_request['reason'] == 'EXCEEDED_MAX_REPROMPTS':
         handle_answer_request(event_request['intent'], session)
 
     return "Thanks for playing.  Please leave a review and let us know what you thought."
