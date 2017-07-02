@@ -40,8 +40,10 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text)
                 "title": card_title,
                 "text": card_text,
                 "image": {
-                    "smallImageUrl": "https://aws.userdel.com/train_that_brain_small_card.jpg",
-                    "largeImageUrl": "https://aws.userdel.com/train_that_brain_large_card.jpg"
+                    "smallImageUrl":
+                        "https://s3.amazonaws.com/aws.userdel.com/train_that_brain_small_card.jpg",
+                    "largeImageUrl":
+                        "https://s3.amazonaws.com/aws.userdel.com/train_that_brain_large_card.jpg"
                 }
             }
         }
