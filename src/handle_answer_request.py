@@ -12,14 +12,14 @@ def handle_answer_request(intent, session):
     print("=====handle_answer_request fired...")
     attributes = {}
     should_end_session = False
-    answer = intent['slots'].get('CatchAllAnswer', {}).get('value')
+    answer = intent['slots'].get('CatchAllAnswer', {}).get('value').lower()
     print("=====answer heard was:  " + answer)
 
     game_questions = session['attributes']['questions']
     game_length = session['attributes']['game_length']
     current_score = session['attributes']['score']
     current_question_index = session['attributes']['current_question_index']
-    correct_answer = game_questions[current_question_index]['answer']
+    correct_answer = game_questions[current_question_index]['answer'].lower()
     current_question = game_questions[current_question_index]['question']
 
     answer_output = None
