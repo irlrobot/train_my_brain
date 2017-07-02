@@ -7,7 +7,8 @@ github.com/irlrobot/train_that_brain
 from __future__ import print_function
 import json
 from play_new_game import play_new_game
-from handle_answer_request import handle_answer_request
+from handle_answer_request import handle_answer_request, handle_no_answer
+from alexa_responses import speech
 
 def lambda_handler(event, _context):
     """main function for AWS Lambda"""
@@ -50,7 +51,8 @@ def on_intent(event_request, session):
     if intent_name == "GameIntent":
         return play_new_game()
     if intent_name == "AMAZON.StopIntent" or "AMAZON.CancelIntent":
-        return "Thanks for playing.  Please leave a review and let us know what you thought."
+        tts = "Thanks for playing.  Please leave a review and let us know what you thought."
+        return speech(tts, {}, True)
 
 def on_session_ended(event_request, session):
     """when the user ends the session intentionally or timeout"""
@@ -59,6 +61,10 @@ def on_session_ended(event_request, session):
 
     # treat timeouts as a wrong answer and keep playing
     if event_request['reason'] == 'EXCEEDED_MAX_REPROMPTS':
-        handle_answer_request(event_request['intent'], session)
+        print("=====treating timeout as wrong answer and continuing...")
+        print(event_request)
+        print(session)
+        return handle_no_answer(session)
 
-    return "Thanks for playing.  Please leave a review and let us know what you thought."
+    tts = "Thanks for playing.  Please leave a review and let us know what you thought."
+    return speech(tts, {}, True)
