@@ -55,6 +55,40 @@ def handle_answer_request(intent, session):
     return speech_with_card(speech_output, attributes, should_end_session,
                             "Here's What You Missed", card_text)
 
+def handle_no_answer(session):
+    """this is when the customer doesn't respond and a timeout occurs"""
+    print("=====handle_no_answer fired...")
+    attributes = {}
+    should_end_session = False
+
+    game_questions = session['attributes']['questions']
+    game_length = session['attributes']['game_length']
+    current_score = session['attributes']['score']
+    current_question_index = session['attributes']['current_question_index']
+    correct_answer = game_questions[current_question_index]['answer'].lower()
+    current_question = game_questions[current_question_index]['question']
+
+    answer_output = "Time's up!"
+
+    if current_question_index == game_length - 1:
+        return end_game_return_score(answer_output, current_score, attributes,
+                                     False, current_question, "nothing", correct_answer)
+
+    current_question_index += 1
+    speech_output = answer_output + "Next question in 3... 2... 1..." +\
+        game_questions[current_question_index]['question']
+    attributes = {
+        "current_question_index": current_question_index,
+        "questions": game_questions,
+        "score": current_score,
+        "game_length": game_length
+    }
+
+    card_text = "The question was:\n" + current_question + \
+        "\nYou didn't answer in time.  The correct answer is " + correct_answer
+    return speech_with_card(speech_output, attributes, should_end_session,
+                            "Here's What You Missed", card_text)
+
 def end_game_return_score(answer_output, current_score, attributes,
                           answered_correctly, last_question, answer, correct_answer):
     """if the customer answered the last question end the game"""
