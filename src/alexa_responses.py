@@ -20,7 +20,7 @@ def speech(tts, attributes, should_end_session):
             }
         }
     }
-    print("=====response:  \n" + str(response))
+    print("=====response back to alexa service:  \n" + str(response))
     return response
 
 def speech_with_card(tts, attributes, should_end_session, card_title, card_text):
@@ -49,5 +49,5 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text)
         }
     }
 
-    print("=====response:  \n" + str(response))
+    print("=====response back to alexa service:  \n" + str(response))
     return response
