@@ -11,6 +11,12 @@
           "type": "ANSWER_LIST"
         }
       ]
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
     }
   ]
 }
