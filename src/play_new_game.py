@@ -16,7 +16,7 @@ def play_new_game():
     # "questions within about sixty seconds for you to answer.  Answer "\
     # "as fast as you can.  Starting in...  3... 2... 1..."
     new_game_message = "3... 2... 1..."
-    questions = pick_random_questions(3, 3)
+    questions = pick_random_questions(5, 2)
     speech_output = new_game_message + questions[0]['question']
     should_end_session = False
     attributes = {
