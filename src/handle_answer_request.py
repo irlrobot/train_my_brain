@@ -35,7 +35,8 @@ def handle_answer_request(intent, session):
 
     if current_question_index == game_length - 1:
         return end_game_return_score(answer_output, current_score, attributes,
-                                     answered_correctly, current_question, answer, correct_answer)
+                                     answered_correctly, current_question,
+                                     answer, correct_answer)
 
     current_question_index += 1
     speech_output = answer_output + "Next question in 3... 2... 1..." +\
@@ -72,7 +73,8 @@ def handle_no_answer(session):
 
     if current_question_index == game_length - 1:
         return end_game_return_score(answer_output, current_score, attributes,
-                                     False, current_question, "nothing", correct_answer)
+                                     False, current_question,
+                                     "nothing", correct_answer)
 
     current_question_index += 1
     speech_output = answer_output + "Next question in 3... 2... 1..." +\
@@ -90,7 +92,8 @@ def handle_no_answer(session):
                             "Here's What You Missed", card_text)
 
 def end_game_return_score(answer_output, current_score, attributes,
-                          answered_correctly, last_question, answer, correct_answer):
+                          answered_correctly, last_question, answer,
+                          correct_answer):
     """if the customer answered the last question end the game"""
     speech_output = answer_output + "Brain Training complete.  You got  " + \
         str(current_score) + " points.  Feel smarter yet?"
