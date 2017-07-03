@@ -13,8 +13,8 @@ def play_new_game():
     """play new game intro and build question bank for the session"""
     print("=====play_new_game fired...")
     new_game_message = "Welcome to Train That Brain!  I'll give you six "\
-        "questions and you'll have eight seconds to answer each one.  I won't "\
-        "repeat the questions so try to remember all the details.  "\
+        "questions and you'll have eight seconds to answer each one...  I won't "\
+        "repeat the questions so try to remember all the details...  "\
         "Starting in...  3... 2... 1..."
     questions = pick_random_questions(3, 2)
     speech_output = new_game_message + questions[0]['question']
