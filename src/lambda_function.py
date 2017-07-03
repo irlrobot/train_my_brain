@@ -6,6 +6,7 @@ github.com/irlrobot/train_that_brain
 """
 from __future__ import print_function
 import json
+from random import randint
 from play_new_game import play_new_game
 from handle_answer_request import handle_answer_request
 from alexa_responses import speech
@@ -59,5 +60,14 @@ def on_session_ended(event_request, session):
     print("=====on_session_ended requestId=" + event_request['requestId'] +
           ", sessionId=" + session['sessionId'])
 
-    tts = "Thanks for playing.  Please leave a review and let us know what you thought."
+    standard_message = "Thanks for playing Train That Brain."
+    review_message = "Please leave a review and let us know what you thought "\
+        "of Train That Brain."
+
+    # don't always ask for a review
+    if randint(1, 2) == 1:
+        tts = standard_message + review_message
+    else:
+        tts = standard_message
+
     return speech(tts, {}, True)
