@@ -5,7 +5,6 @@ v1.0.0
 github.com/irlrobot/train_that_brain
 """
 from __future__ import print_function
-from random import randint
 from alexa_responses import speech, speech_with_card
 
 def handle_answer_request(intent, session):
@@ -61,15 +60,8 @@ def end_game_return_score(answer_output, current_score, attributes,
                           answered_correctly, last_question, answer,
                           correct_answer):
     """if the customer answered the last question end the game"""
-    # don't always ask for a review
-    if randint(1, 5) == 1:
-        speech_output = answer_output + "Brain training complete, you got  " + \
-            str(current_score) + " points.  Please leave a review for "\
-            "Train That Brain and let us know what you thought."
-    else:
-        speech_output = answer_output + "Brain training complete, you got  " + \
-            str(current_score) + " points.  Play Train That Brain daily to keep "\
-            "your mind muscles strong!"
+    speech_output = answer_output + "Brain training complete, you got  " + \
+        str(current_score) + " points.  Would you like to play again?"
 
     if answered_correctly:
         card_text = "Your score is " + str(current_score) + " points!"
@@ -77,7 +69,7 @@ def end_game_return_score(answer_output, current_score, attributes,
         card_text = "Your score is " + str(current_score) + " points!\n" + \
             "\nThe last question was:\n" + last_question + \
             "\nYou said " + answer + " but the correct answer is " + correct_answer
-    should_end_session = True
+    should_end_session = False
     return speech_with_card(speech_output, attributes, should_end_session,
                             "Results", card_text)
 
