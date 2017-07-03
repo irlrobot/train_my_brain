@@ -20,3 +20,5 @@ GameIntent for a game
 GameIntent for a session
 GameIntent for training
 AnswerIntent {CatchAllAnswer}
+AMAZON.StartOverIntent new game
+AMAZON.StartOverIntent start new game
