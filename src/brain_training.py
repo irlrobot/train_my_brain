@@ -80,7 +80,7 @@ QUESTIONS = [
                 "id": 2,
                 "question": "Josh bought two dozen roses for his wife Bridget on Sunday... " + \
                     "Monday is their third anniversary and they're going to an italian" + \
-                    "retaurant called Gino's in Chicago...  How many dozen roses did Josh buy?",
+                    "restaurant called Gino's in Chicago...  How many dozen roses did Josh buy?",
                 "answer": "2"
             },
             {
