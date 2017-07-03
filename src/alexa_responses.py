@@ -74,7 +74,7 @@ def play_end_message():
 
     # don't always ask for a review
     if randint(1, 3) == 1:
-        tts = standard_message + review_message
+        tts = standard_message + " " + review_message
     else:
         tts = standard_message
 
