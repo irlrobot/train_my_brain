@@ -87,8 +87,8 @@ QUESTIONS = [
                 "id": 3,
                 "question": "Justin and Tara just got back from a 9 day trip to " + \
                     "Green Bay...  The trip was for a family reunion where " + \
-                    "they saw 31 relatives, including Tara's cousin Joey from Detroit" + \
-                    "who Tara hadn't seen in 11 years...  What city did Justin and Tara " + \
+                    "they saw 31 relatives, including Tara's cousin Joey from Detroit..." + \
+                    " Tara hasn't seen Joey in 11 years...  What city did Justin and Tara " + \
                     "just return from?",
                 "answer": "Green Bay"
             }
