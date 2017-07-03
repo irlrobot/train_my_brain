@@ -45,6 +45,7 @@ def on_intent(event_request, session):
 
     intent = event_request['intent']
     intent_name = event_request['intent']['name']
+    print("=====intent is: " + intent_name)
 
     if intent_name == "AnswerIntent":
         print("=====AnswerIntent fired...")
@@ -52,10 +53,10 @@ def on_intent(event_request, session):
     if intent_name == "GameIntent":
         print("=====GameIntent fired...")
         return play_new_game()
-    if intent_name == "AMAZON.StartOverIntent" or "AMAZON.YesIntent":
+    if intent_name in ("AMAZON.StartOverIntent", "AMAZON.YesIntent"):
         print("=====StartOverIntent or YesIntent fired...")
         return play_new_game()
-    if intent_name == "AMAZON.StopIntent" or "AMAZON.CancelIntent" or "AMAZON.NoIntent":
+    if intent_name in ("AMAZON.StopIntent", "AMAZON.CancelIntent", "AMAZON.NoIntent"):
         print("=====StopIntent, CancelIntent, or NoIntent fired...")
         return play_end_message()
 
