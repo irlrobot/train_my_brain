@@ -49,7 +49,13 @@ def on_intent(event_request, session):
 
     if intent_name == "AnswerIntent":
         print("=====AnswerIntent fired...")
-        return handle_answer_request(intent, session)
+        if 'attributes' in session:
+            return handle_answer_request(intent, session)
+
+        # we probably got here because user said something other than
+        # no after asking if they wanted to play the game again
+        print("=====no attributes ending game")
+        return play_end_message()
     if intent_name == "GameIntent":
         print("=====GameIntent fired...")
         return play_new_game()
