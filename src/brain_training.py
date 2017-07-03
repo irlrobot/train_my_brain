@@ -222,7 +222,7 @@ QUESTIONS = [
             {
                 "id": 7,
                 "question": "A recent study shows that teenagers who play video games " +\
-                    "are 38% more likey to pass exams with a grade of B or " +\
+                    "are 38 percent more likey to pass exams with a letter grade of B or " +\
                     "higher... The study hypothesizes that the mental stimulation " +\
                     "enhances cognitive abilities and makes them more capable of " +\
                     "problem solving and reasoning... What did the article say " +\
