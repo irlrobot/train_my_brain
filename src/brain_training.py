@@ -202,12 +202,12 @@ QUESTIONS = [
             },
             {
                 "id": 5,
-                "question": "Allison has three cats, Sam, Lucky, and Tips... " +\
-                    "Sam has white fur with patches of and brown... " +\
+                "question": "Tina has three cats, Sam, Lucky, and Tips... " +\
+                    "Sam has white fur with patches of brown... " +\
                     "Lucky is orange with long hair...  " +\
                     "Tips is dark black except his ears which are white..." +\
                     "What is the name of the owner of Sam, Lucky, and Tips?",
-                "answer": "Allison"
+                "answer": "Tina"
             },
             {
                 "id": 6,
