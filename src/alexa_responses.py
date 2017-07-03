@@ -17,6 +17,12 @@ def speech(tts, attributes, should_end_session):
             "outputSpeech": {
                 "type": "PlainText",
                 "text": tts
+            },
+            "reprompt": {
+                "outputSpeech": {
+                    "type": "PlainText",
+                    "text": "Time's up!  What's your guess?"
+                }
             }
         }
     }
@@ -44,6 +50,12 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text)
                         "https://s3.amazonaws.com/trainthatbrain/train_that_brain_small_card.jpg",
                     "largeImageUrl":
                         "https://s3.amazonaws.com/trainthatbrain/train_that_brain_large_card.jpg"
+                }
+            },
+            "reprompt": {
+                "outputSpeech": {
+                    "type": "PlainText",
+                    "text": "Time's up!  What's your guess?"
                 }
             }
         }
