@@ -28,18 +28,23 @@ QUESTIONS = [
         "spelling_backwords": [
             {
                 "id": 1,
-                "question": "Spell the word Cats backwords.  Cats.",
+                "question": "Spell the word... Cats... backwords.",
                 "answer": "STAC"
             },
             {
                 "id": 2,
-                "question": "Spell the word Puppy backwords.  Puppy.",
+                "question": "Spell the word... Puppy... backwords.",
                 "answer": "YPPUP"
             },
             {
                 "id": 3,
-                "question": "Spell the word Rabbit backwords.  Rabbit.",
+                "question": "Spell the word... Rabbit... backwords.",
                 "answer": "TIBBAR"
+            },
+            {
+                "id": 3,
+                "question": "Spell the word... Blue... backwords.",
+                "answer": "EULB"
             }
         ]
     },
@@ -81,9 +86,9 @@ QUESTIONS = [
             {
                 "id": 3,
                 "question": "Justin and Tara just got back from a 9 day trip to " + \
-                    "Green Bay.  The trip was for a family reunion where " + \
+                    "Green Bay...  The trip was for a family reunion where " + \
                     "they saw 31 relatives, including Tara's cousin Joey from Detroit" + \
-                    "who Tara hadn't seen in 11 years.  What city did Justin and Tara " + \
+                    "who Tara hadn't seen in 11 years...  What city did Justin and Tara " + \
                     "just return from?",
                 "answer": "Green Bay"
             }
