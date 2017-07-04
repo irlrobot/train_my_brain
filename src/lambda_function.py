@@ -53,7 +53,7 @@ def on_intent(event_request, session):
             return handle_answer_request(intent, session)
 
         # we probably got here because user said something other than
-        # no after asking if they wanted to play the game again
+        # yes or no after asking if they wanted to play the game again
         print("=====no attributes ending game")
         return play_end_message()
     if intent_name == "GameIntent":
@@ -62,8 +62,16 @@ def on_intent(event_request, session):
     if intent_name in ("AMAZON.StartOverIntent", "AMAZON.YesIntent"):
         print("=====StartOverIntent or YesIntent fired...")
         return play_new_game()
-    if intent_name in ("AMAZON.StopIntent", "AMAZON.CancelIntent", "AMAZON.NoIntent"):
-        print("=====StopIntent, CancelIntent, or NoIntent fired...")
+    if intent_name == "AMAZON.NoIntent":
+        print("=====NoIntent fired...")
+        # if there's a session and we're in a game treat this as a wrong answer
+        if 'attributes' in session:
+            if session['attributes']['current_question_index'] == "in_progress":
+                return handle_answer_request(intent, session)
+        # otherwise end the game
+        return play_end_message()
+    if intent_name in ("AMAZON.StopIntent", "AMAZON.CancelIntent"):
+        print("=====StopIntent or CancelIntent fired")
         return play_end_message()
 
 def on_session_ended(event_request, session):
