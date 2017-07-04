@@ -22,24 +22,21 @@ def handle_answer_request(intent, session):
     correct_answer = game_questions[current_question_index]['answer'].lower()
     current_question = game_questions[current_question_index]['question']
 
-    answer_output = None
     answered_correctly = None
     if answer == correct_answer:
         current_score += 10
-        answer_output = "CORRECT!"
         answered_correctly = True
     else:
         log_wrong_answer(current_question, answer, correct_answer)
-        answer_output = "WRONG!"
         answered_correctly = False
 
     if current_question_index == game_length - 1:
-        return end_game_return_score(answer_output, current_score, attributes,
+        return end_game_return_score(current_score, attributes,
                                      answered_correctly, current_question,
                                      answer, correct_answer)
 
     current_question_index += 1
-    speech_output = answer_output + "Next question in 3... 2... 1..." +\
+    speech_output = "Next question in 3... 2... 1..." +\
         game_questions[current_question_index]['question']
     attributes = {
         "current_question_index": current_question_index,
@@ -49,29 +46,34 @@ def handle_answer_request(intent, session):
     }
 
     if answered_correctly:
-        return speech(speech_output, attributes, should_end_session)
+        return speech(speech_output, attributes, should_end_session, answered_correctly)
 
+    speech_output += "The correct answer was " + str(correct_answer)
     card_text = "The question was:\n" + current_question + \
         "\nYou said " + answer + " but the correct answer is " + correct_answer
     return speech_with_card(speech_output, attributes, should_end_session,
-                            "Here's What You Missed", card_text)
+                            "Here's What You Missed", card_text,
+                            answered_correctly)
 
-def end_game_return_score(answer_output, current_score, attributes,
+def end_game_return_score(current_score, attributes,
                           answered_correctly, last_question, answer,
                           correct_answer):
     """if the customer answered the last question end the game"""
-    speech_output = answer_output + "Brain training complete, you got  " + \
+    speech_output = "Brain training complete, you got  " + \
         str(current_score) + " points.  Would you like to play again?"
 
     if answered_correctly:
         card_text = "Your score is " + str(current_score) + " points!"
     else:
+        speech_output = "The correct answer was " + str(correct_answer) +\
+            "Brain training complete, you got  " + \
+            str(current_score) + " points.  Would you like to play again?"
         card_text = "Your score is " + str(current_score) + " points!\n" + \
             "\nThe last question was:\n" + last_question + \
             "\nYou said " + answer + " but the correct answer is " + correct_answer
     should_end_session = False
     return speech_with_card(speech_output, attributes, should_end_session,
-                            "Results", card_text)
+                            "Results", card_text, answered_correctly)
 
 def log_wrong_answer(question, answer, correct_answer):
     """log all questions answered incorrectly so i can analyze later"""
