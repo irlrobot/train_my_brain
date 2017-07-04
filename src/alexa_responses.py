@@ -7,17 +7,18 @@ github.com/irlrobot/train_that_brain
 from __future__ import print_function
 from random import randint
 
-def speech(tts, attributes, should_end_session):
+def speech(tts, attributes, should_end_session, answered_correctly):
     '''build speech output'''
     print("======speech fired...")
+    sound = get_sound_effect_for_answer(answered_correctly)
     response = {
         "version": "1.0",
         "sessionAttributes": attributes,
         "response": {
             "shouldEndSession": should_end_session,
             "outputSpeech": {
-                "type": "PlainText",
-                "text": tts
+                "type": "SSML",
+                "ssml": "<speak>" + sound + tts + "</speak>"
             },
             "reprompt": {
                 "outputSpeech": {
@@ -30,17 +31,19 @@ def speech(tts, attributes, should_end_session):
     print("=====response back to alexa service:  \n" + str(response))
     return response
 
-def speech_with_card(tts, attributes, should_end_session, card_title, card_text):
+def speech_with_card(tts, attributes, should_end_session, card_title,
+                     card_text, answered_correctly):
     '''build speech output with a card'''
     print("======speech_with_card fired...")
+    sound = get_sound_effect_for_answer(answered_correctly)
     response = {
         "version": "1.0",
         "sessionAttributes": attributes,
         "response": {
             "shouldEndSession": should_end_session,
             "outputSpeech": {
-                "type": "PlainText",
-                "text": tts
+                "type": "SSML",
+                "ssml": "<speak>" + sound + tts + "</speak>"
             },
             "card": {
                 "type": "Standard",
@@ -67,10 +70,11 @@ def speech_with_card(tts, attributes, should_end_session, card_title, card_text)
 
 def play_end_message():
     """play a standard message when exiting the skill"""
+    print("=====play_end_message fired...")
     standard_message = "Thanks for playing Train That Brain.  Play daily to keep "\
         "your mind muscles strong."
     review_message = "Please leave a review and let us know what you thought "\
-        "of Train That Brain."
+        "of Train My Brain."
 
     # don't always ask for a review
     if randint(1, 3) == 1:
@@ -78,4 +82,15 @@ def play_end_message():
     else:
         tts = standard_message
 
-    return speech(tts, {}, True)
+    return speech(tts, {}, True, None)
+
+def get_sound_effect_for_answer(answer_was_right):
+    """get the appropriate sound effect"""
+    print("=====get_sound_effect_for_answer fired...")
+    print("=====answer_was_right:  " + str(answer_was_right))
+    if answer_was_right is None:
+        return ""
+    if answer_was_right:
+        return "<audio src=\"https://s3.amazonaws.com/trainthatbrain/correct.mp3\" />"
+
+    return "<audio src=\"https://s3.amazonaws.com/trainthatbrain/wrong.mp3\" />"
