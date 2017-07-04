@@ -16,7 +16,7 @@ def play_new_game():
         "questions and you'll have eight seconds to answer each one...  I won't "\
         "repeat the questions so try to remember all the details...  "\
         "Starting in...  3... 2... 1..."
-    questions = pick_random_questions(3, 2)
+    questions = pick_random_questions(6)
     speech_output = new_game_message + questions[0]['question']
     should_end_session = False
     attributes = {
@@ -28,16 +28,10 @@ def play_new_game():
     }
     return speech(speech_output, attributes, should_end_session, None)
 
-def pick_random_questions(num_categories, num_questions):
+def pick_random_questions(num_questions):
     """pick random questions from the bank to form the game"""
     print("=====pick_random_questions fired...")
-    categories = sample(list(QUESTIONS), k=num_categories)
-    questions = []
-    for category in categories:
-        category_name = next(iter(category))
-        category_questions = sample(list(category[category_name]), k=num_questions)
-        for category_question in category_questions:
-            questions.append(category_question)
+    questions = sample(list(QUESTIONS), k=num_questions)
 
     shuffle(questions)
     return questions
