@@ -66,7 +66,7 @@ def on_intent(event_request, session):
         print("=====NoIntent fired...")
         # if there's a session and we're in a game treat this as a wrong answer
         if 'attributes' in session:
-            if session['attributes']['current_question_index'] == "in_progress":
+            if session['attributes']['game_status'] == "in_progress":
                 return handle_answer_request(intent, session)
         # otherwise end the game
         return play_end_message()
