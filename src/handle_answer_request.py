@@ -28,7 +28,7 @@ def handle_answer_request(intent, session):
     current_question = game_questions[current_question_index]['question']
 
     answered_correctly = None
-    if answer == correct_answer:
+    if correct_answer in answer:
         current_score += 10
         answered_correctly = True
     else:
@@ -53,6 +53,11 @@ def handle_answer_request(intent, session):
 
     if answered_correctly:
         return speech(speech_output, attributes, should_end_session, answered_correctly)
+
+    # if it's a spelling_backwords questions we need
+    # to add spaces into the answer so she spells it out
+    if current_question['category'] == 'spelling_backwords':
+        correct_answer = " ".join(correct_answer)
 
     speech_output = "The correct answer was " + str(correct_answer) + ". " + speech_output
     card_text = "The question was:\n" + current_question + \
