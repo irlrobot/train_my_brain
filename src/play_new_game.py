@@ -23,7 +23,8 @@ def play_new_game():
         "questions": questions,
         "score": 0,
         "current_question_index": 0,
-        "game_length": len(questions)
+        "game_length": len(questions),
+        "game_status": "in_progress"
     }
     return speech(speech_output, attributes, should_end_session, None)
 
