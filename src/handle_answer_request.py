@@ -54,9 +54,9 @@ def handle_answer_request(intent, session):
     if answered_correctly:
         return speech(speech_output, attributes, should_end_session, answered_correctly)
 
-    # if it's a spelling_backwords questions we need
+    # if it's a spelling_backwords question we need
     # to add spaces into the answer so she spells it out
-    if current_question['category'] == 'spelling_backwords':
+    if game_questions[current_question_index]['category'] == 'spelling_backwords':
         correct_answer = " ".join(correct_answer)
 
     speech_output = "The correct answer was " + str(correct_answer) + ". " + speech_output
