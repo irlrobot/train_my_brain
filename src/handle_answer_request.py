@@ -42,7 +42,8 @@ def handle_answer_request(intent, session):
         "current_question_index": current_question_index,
         "questions": game_questions,
         "score": current_score,
-        "game_length": game_length
+        "game_length": game_length,
+        "game_status": "in_progress"
     }
 
     if answered_correctly:
@@ -72,6 +73,7 @@ def end_game_return_score(current_score, attributes,
             "\nThe last question was:\n" + last_question + \
             "\nYou said " + answer + " but the correct answer is " + correct_answer
     should_end_session = False
+    attributes['game_status'] = "ended"
     return speech_with_card(speech_output, attributes, should_end_session,
                             "Results", card_text, answered_correctly)
 
