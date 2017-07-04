@@ -36,7 +36,7 @@ def handle_answer_request(intent, session):
         # if it's a spelling_backwords question we need
         # to add spaces into the answer so she spells it out
         if game_questions[current_question_index]['category'] == 'spelling_backwords':
-            correct_answer = "... ".join(correct_answer)
+            correct_answer = correct_answer.replace("", "... ")[1: -1]
         answered_correctly = False
 
     if current_question_index == game_length - 1:
