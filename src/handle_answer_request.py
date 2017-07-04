@@ -12,7 +12,12 @@ def handle_answer_request(intent, session):
     print("=====handle_answer_request fired...")
     attributes = {}
     should_end_session = False
-    answer = intent['slots'].get('CatchAllAnswer', {}).get('value').lower()
+    if 'slots' in intent:
+        answer = intent['slots'].get('CatchAllAnswer', {}).get('value').lower()
+    else:
+        # if we got this far we should mark it as no response because
+        # another word wasn't caught by the catchcall slot (e.g. NoIntent)
+        answer = "no response"
     print("=====answer heard was:  " + answer)
 
     game_questions = session['attributes']['questions']
