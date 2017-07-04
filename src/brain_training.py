@@ -29,7 +29,7 @@ QUESTIONS = [
             },
             {
                 "id": 5,
-                "question": "What word can you spell with these letters:  A... S... D... F...",
+                "question": "What word can you spell with these letters:  A... S... D... F",
                 "answer": "Fads"
             },
             {
