@@ -25,7 +25,7 @@ def play_new_game():
         "current_question_index": 0,
         "game_length": len(questions)
     }
-    return speech(speech_output, attributes, should_end_session)
+    return speech(speech_output, attributes, should_end_session, None)
 
 def pick_random_questions(num_categories, num_questions):
     """pick random questions from the bank to form the game"""
