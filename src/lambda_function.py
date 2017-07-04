@@ -58,6 +58,11 @@ def on_intent(event_request, session):
         return play_end_message()
     if intent_name == "GameIntent":
         print("=====GameIntent fired...")
+        # if there's a session and we're in a game treat this as an answer
+        # unfortunately it will be wrong but it's better than starting over
+        if 'attributes' in session:
+            if session['attributes']['game_status'] == "in_progress":
+                return handle_answer_request(intent, session)
         return play_new_game()
     if intent_name in ("AMAZON.StartOverIntent", "AMAZON.YesIntent"):
         print("=====StartOverIntent or YesIntent fired...")
