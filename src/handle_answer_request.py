@@ -48,7 +48,7 @@ def handle_answer_request(intent, session):
     if answered_correctly:
         return speech(speech_output, attributes, should_end_session, answered_correctly)
 
-    speech_output += "The correct answer was " + str(correct_answer)
+    speech_output = "The correct answer was " + str(correct_answer) + ". " + speech_output
     card_text = "The question was:\n" + current_question + \
         "\nYou said " + answer + " but the correct answer is " + correct_answer
     return speech_with_card(speech_output, attributes, should_end_session,
@@ -66,7 +66,7 @@ def end_game_return_score(current_score, attributes,
         card_text = "Your score is " + str(current_score) + " points!"
     else:
         speech_output = "The correct answer was " + str(correct_answer) +\
-            "Brain training complete, you got  " + \
+            ". Brain training complete, you got  " + \
             str(current_score) + " points.  Would you like to play again?"
         card_text = "Your score is " + str(current_score) + " points!\n" + \
             "\nThe last question was:\n" + last_question + \
