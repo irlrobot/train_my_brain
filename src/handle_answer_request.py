@@ -13,7 +13,7 @@ def handle_answer_request(intent, session):
     attributes = {}
     should_end_session = False
     if 'slots' in intent:
-        answer = intent['slots'].get('CatchAllAnswer', {}).get('value').lower()
+        answer = intent['slots'].get('CatchAllAnswer', {}).get('value').upper()
     else:
         # if we got this far we should mark it as no response because
         # another word wasn't caught by the catchcall slot (e.g. NoIntent)
@@ -24,7 +24,7 @@ def handle_answer_request(intent, session):
     game_length = session['attributes']['game_length']
     current_score = session['attributes']['score']
     current_question_index = session['attributes']['current_question_index']
-    correct_answer = game_questions[current_question_index]['answer'].lower()
+    correct_answer = game_questions[current_question_index]['answer'].upper()
     current_question = game_questions[current_question_index]['question']
 
     answered_correctly = None
