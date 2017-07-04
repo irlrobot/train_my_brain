@@ -333,7 +333,7 @@ QUESTIONS = [
     {
         "id": 48,
         "question": "What is the study of fossils called?",
-        "answer": "Palaeontology",
+        "answer": "Paleontology",
         "category": "simple_trivia"
     },
     {
