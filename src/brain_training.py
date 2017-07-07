@@ -347,5 +347,11 @@ QUESTIONS = [
         "question": "Andrew Carnegie made his fortune in which industry?",
         "answer": "Steel",
         "category": "simple_trivia"
+    },
+    {
+        "id": 51,
+        "question": "The primary colors are Red... Blue... and...",
+        "answer": "Yellow",
+        "category": "simple_trivia"
     }
 ]
