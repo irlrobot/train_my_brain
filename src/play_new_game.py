@@ -31,6 +31,7 @@ def play_new_game():
 def pick_random_questions(num_questions):
     """pick random questions from the bank to form the game"""
     print("=====pick_random_questions fired...")
+    shuffle(QUESTIONS)
     questions = sample(list(QUESTIONS), k=num_questions)
 
     shuffle(questions)
