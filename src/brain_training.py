@@ -353,5 +353,12 @@ QUESTIONS = [
         "question": "The primary colors are Red... Blue... and...",
         "answer": "Yellow",
         "category": "simple_trivia"
+    },
+    {
+        "id": 52,
+        "question": "You're in a race and just overtook the person in "\
+            "second place... What place are you in now?",
+        "answer": "Second",
+        "category": "simple_trivia"
     }
 ]
