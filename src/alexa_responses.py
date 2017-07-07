@@ -77,7 +77,7 @@ def play_end_message():
         "of Train My Brain."
 
     # don't always ask for a review
-    if randint(1, 3) == 1:
+    if randint(1, 10) == 1:
         tts = standard_message + " " + review_message
     else:
         tts = standard_message
