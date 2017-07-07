@@ -8,18 +8,18 @@
 54
 48
 279
-E U L B
-S T A C
-N E E R G
-Y P P U P
-E N A L P
-Y A D N O M
-T E K S A B
-E O H S
-E U L B
-T I U R F
-A T S A P
-T I B B A R
+EULB
+STAC
+NEERG
+YPPUP
+ENALP
+YADNOM
+TEKSAB
+EOHS
+EULB
+TIURF
+ATSAP
+TIBBAR
 Radiation
 Baseball
 Thursday
@@ -30,7 +30,7 @@ Pink
 Venus
 42
 Work
-Palaeontology
+Paleontology
 Basil
 Steel
 5
@@ -48,3 +48,5 @@ Video Games
 Phoenix
 Friday
 2
+Yellow
+Second
