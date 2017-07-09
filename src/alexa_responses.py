@@ -71,14 +71,14 @@ def speech_with_card(tts, attributes, should_end_session, card_title,
 def play_end_message():
     """play a standard message when exiting the skill"""
     print("=====play_end_message fired...")
-    standard_message = "Thanks for playing Train My Brain.  Play daily to keep "\
+    standard_message = "Thanks for playing Train My Brain!  Play daily to keep "\
         "your mind muscles strong."
-    review_message = "Please leave a review and let us know what you thought "\
-        "of Train My Brain."
+    review_message = "Thanks for playing Train My Brain!  "\
+        "Please leave a review and let us know what you thought."
 
     # don't always ask for a review
     if randint(1, 10) == 1:
-        tts = standard_message + " " + review_message
+        tts = review_message
     else:
         tts = standard_message
 
