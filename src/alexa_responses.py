@@ -11,6 +11,7 @@ def speech(tts, attributes, should_end_session, answered_correctly):
     '''build speech output'''
     print("======speech fired...")
     sound = get_sound_effect_for_answer(answered_correctly)
+    prompt = prompt_sound(should_end_session)
     response = {
         "version": "1.0",
         "sessionAttributes": attributes,
@@ -18,7 +19,7 @@ def speech(tts, attributes, should_end_session, answered_correctly):
             "shouldEndSession": should_end_session,
             "outputSpeech": {
                 "type": "SSML",
-                "ssml": "<speak>" + sound + tts + "</speak>"
+                "ssml": "<speak>" + sound + tts + prompt + "</speak>"
             },
             "reprompt": {
                 "outputSpeech": {
@@ -36,6 +37,7 @@ def speech_with_card(tts, attributes, should_end_session, card_title,
     '''build speech output with a card'''
     print("======speech_with_card fired...")
     sound = get_sound_effect_for_answer(answered_correctly)
+    prompt = prompt_sound(should_end_session)
     response = {
         "version": "1.0",
         "sessionAttributes": attributes,
@@ -43,7 +45,7 @@ def speech_with_card(tts, attributes, should_end_session, card_title,
             "shouldEndSession": should_end_session,
             "outputSpeech": {
                 "type": "SSML",
-                "ssml": "<speak>" + sound + tts + "</speak>"
+                "ssml": "<speak>" + sound + tts + prompt + "</speak>"
             },
             "card": {
                 "type": "Standard",
@@ -94,3 +96,10 @@ def get_sound_effect_for_answer(answer_was_right):
         return "<audio src=\"https://s3.amazonaws.com/trainthatbrain/correct.mp3\" />"
 
     return "<audio src=\"https://s3.amazonaws.com/trainthatbrain/wrong.mp3\" />"
+
+def prompt_sound(should_end_session):
+    """determine if the prompt sound should play"""
+    if should_end_session:
+        return ''
+
+    return "<audio src=\"https://s3.amazonaws.com/trainthatbrain/prompt.mp3\" />"
