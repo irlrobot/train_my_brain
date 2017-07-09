@@ -80,8 +80,8 @@ def on_intent(event_request, session):
         return play_end_message()
     if intent_name == 'AMAZON.HelpIntent':
         print("=====HelpIntent...")
-        tts = "During the game I'll give you six random questions from "\
-            "a variety of categories... To make your mind muscles stronger, I "\
+        tts = "During the game I'll give you 6 random brain teasers and only 8 "\
+            "seconds to anser each one... To make your mind muscles stronger, I "\
             "won't repeat any of the questions, so try to remember all the "\
             "details... You can say 'Start Over' if you'd like a new game, "\
             "or make your guess for the last question..."
