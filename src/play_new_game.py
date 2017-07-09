@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Train That Brain
+Train My Brain
 v1.0.0
 github.com/irlrobot/train_that_brain
 """
@@ -12,7 +12,7 @@ from brain_training import QUESTIONS
 def play_new_game():
     """play new game intro and build question bank for the session"""
     print("=====play_new_game fired...")
-    new_game_message = "Welcome to Train That Brain!  I'll give you six "\
+    new_game_message = "Welcome to Train My Brain!  I'll give you six "\
         "questions and you'll have eight seconds to answer each one...  I won't "\
         "repeat the questions so try to remember all the details...  "\
         "Starting in...  3... 2... 1..."

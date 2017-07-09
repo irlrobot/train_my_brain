@@ -1,3 +1,3 @@
-Alexa, play Train That Brain
-start Train That Brain
-ask Train That Brain for training
+Alexa, play Train My Brain
+Alexa, start Train My Brain
+Alexa, begin Train My Brain

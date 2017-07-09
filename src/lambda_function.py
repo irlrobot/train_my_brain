@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Train That Brain
+Train My Brain
 v1.0.0
 github.com/irlrobot/train_that_brain
 """

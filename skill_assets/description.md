@@ -6,4 +6,4 @@ Keep your mind sharp with brain training at least once a day.  Every time you pl
 
 Categories include Basic Math (addition, subtraction, and multiplication), Word Puzzles, Spelling Backwards, Memory Games, and Trivia.
 
-Leave feedback in your review to tell us what you liked, disliked, or what you'd like to see included.  Thanks for playing Train That Brain!
+Leave feedback in your review to tell us what you liked, disliked, or what you'd like to see included.  Thanks for playing Train My Brain!
