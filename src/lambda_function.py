@@ -8,7 +8,7 @@ from __future__ import print_function
 import json
 from play_new_game import play_new_game
 from handle_answer_request import handle_answer_request
-from alexa_responses import play_end_message
+from alexa_responses import play_end_message, speech
 
 def lambda_handler(event, _context):
     """main function for AWS Lambda"""
@@ -78,6 +78,14 @@ def on_intent(event_request, session):
     if intent_name in ("AMAZON.StopIntent", "AMAZON.CancelIntent"):
         print("=====StopIntent or CancelIntent fired")
         return play_end_message()
+    if intent_name == 'AMAZON.HelpIntent':
+        print("=====HelpIntent...")
+        tts = "During the game I'll give you six random questions from "\
+            "a variety of categories... To make your mind muscles stronger, I "\
+            "won't repeat any of the questions, so try to remember all the "\
+            "details... You can say 'Start Over' if you'd like a new game, "\
+            "or make your guess for the last question..."
+        return speech(tts, session['attributes'], False, None)
 
 def on_session_ended(event_request, session):
     """when the user ends the session intentionally or timeout"""
