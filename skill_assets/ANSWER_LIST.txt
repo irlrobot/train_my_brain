@@ -50,3 +50,17 @@ Friday
 2
 Yellow
 Second
+Key
+Deck
+Trunk
+Case
+Sheet
+Tank
+Racket
+Pipe
+Bomb
+Space
+Ship
+Circle
+Color
+Deaf
