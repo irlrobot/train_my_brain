@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Train My Brain
-v1.0.0
+v2.0.0
 github.com/irlrobot/train_that_brain
 """
 """
@@ -11,6 +11,7 @@ Categories:
 3. simple_math
 4. memory_game
 5. simple_trivia
+6. word_association
 """
 QUESTIONS = [
     {
