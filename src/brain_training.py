@@ -360,5 +360,103 @@ QUESTIONS = [
             "second place... What place are you in now?",
         "answer": "Second",
         "category": "simple_trivia"
+    },
+    {
+        "id": 53,
+        "question": "What word is associated with the words... Lock... "\
+            "and... Piano...",
+        "answer": "Key",
+        "category": "word_association"
+    },
+    {
+        "id": 54,
+        "question": "What word is associated with the words... Ship... "\
+            "and... Card...",
+        "answer": "Deck",
+        "category": "word_association"
+    },
+    {
+        "id": 55,
+        "question": "What word is associated with the words... Tree... "\
+            "and... Car...",
+        "answer": "Trunk",
+        "category": "word_association"
+    },
+    {
+        "id": 56,
+        "question": "What word is associated with the words... Pillow... "\
+            "and... Court...",
+        "answer": "Case",
+        "category": "word_association"
+    },
+    {
+        "id": 57,
+        "question": "What word is associated with the words... Bed... "\
+            "and... Paper...",
+        "answer": "Sheet",
+        "category": "word_association"
+    },
+    {
+        "id": 58,
+        "question": "What word is associated with the words... Army... "\
+            "and... Water...",
+        "answer": "Tank",
+        "category": "word_association"
+    },
+    {
+        "id": 59,
+        "question": "What word is associated with the words... Tennis... "\
+            "and... Noise...",
+        "answer": "Racket",
+        "category": "word_association"
+    },
+    {
+        "id": 60,
+        "question": "What word is associated with the words... Smoker... "\
+            "and... Plumber...",
+        "answer": "Pipe",
+        "category": "word_association"
+    },
+    {
+        "id": 61,
+        "question": "What word is associated with the words... Atomic... "\
+            "and... Shell...",
+        "answer": "Bomb",
+        "category": "word_association"
+    },
+    {
+        "id": 62,
+        "question": "What word is associated with the words... Outer... "\
+            "and... Station...",
+        "answer": "Space",
+        "category": "word_association"
+    },
+    {
+        "id": 63,
+        "question": "What word is associated with the words... Cruise... "\
+            "and... Wreck...",
+        "answer": "Ship",
+        "category": "word_association"
+    },
+    {
+        "id": 64,
+        "question": "What word is associated with the words... Sphere... "\
+            "and... Perfect...",
+        "answer": "Circle",
+        "category": "word_association"
+    },
+    {
+        "id": 65,
+        "question": "What word is associated with the words... Green... "\
+            "and... Blind...",
+        "answer": "Color",
+        "category": "word_association"
+    },
+    {
+        "id": 66,
+        "question": "What word is associated with the words... Tone... "\
+            "and... Mute...",
+        "answer": "Deaf",
+        "category": "word_association"
     }
 ]
