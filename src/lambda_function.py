@@ -36,7 +36,7 @@ def on_launch(event_request, session):
     """when customer launches the skill via modal"""
     print("=====on_launch requestId:  " + event_request['requestId'] +
           ", sessionId=" + session['sessionId'])
-    return play_new_game()
+    return play_new_game(True)
 
 def on_intent(event_request, session):
     """when customer launches the skill via modal"""
@@ -64,10 +64,10 @@ def on_intent(event_request, session):
         if 'attributes' in session:
             if session['attributes']['game_status'] == "in_progress":
                 return handle_answer_request(intent, session)
-        return play_new_game()
+        return play_new_game(False)
     if intent_name in ("AMAZON.StartOverIntent", "AMAZON.YesIntent"):
         print("=====StartOverIntent or YesIntent fired...")
-        return play_new_game()
+        return play_new_game(True)
     if intent_name == "AMAZON.NoIntent":
         print("=====NoIntent fired...")
         # if there's a session and we're in a game treat this as a wrong answer

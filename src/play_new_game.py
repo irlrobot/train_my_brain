@@ -9,13 +9,16 @@ from random import sample, shuffle
 from alexa_responses import speech
 from brain_training import QUESTIONS
 
-def play_new_game():
+def play_new_game(replay):
     """play new game intro and build question bank for the session"""
     print("=====play_new_game fired...")
-    new_game_message = "Welcome to Train My Brain!  I'm going to give you six "\
-        "brain teasers and you'll only have eight seconds to answer each one... "\
-        "I won't repeat the questions so try to remember all the details...  "\
-        "Starting in...  3... 2... 1..."
+    if replay:
+        new_game_message = "Ready for more?  Starting a new game in... 3... 2... 1..."
+    else:
+        new_game_message = "Welcome to Train My Brain!  I'm going to give you six "\
+            "brain teasers and you'll only have eight seconds to answer each one... "\
+            "I won't repeat the questions so try to remember all the details...  "\
+            "Starting in...  3... 2... 1..."
     questions = pick_random_questions(6)
     speech_output = new_game_message + questions[0]['question']
     should_end_session = False
