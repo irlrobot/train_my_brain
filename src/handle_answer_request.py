@@ -6,6 +6,7 @@ github.com/irlrobot/train_that_brain
 """
 from __future__ import print_function
 from alexa_responses import speech, speech_with_card
+from fuzzywuzzy import fuzz
 
 def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""
@@ -28,7 +29,8 @@ def handle_answer_request(intent, session):
     current_question = game_questions[current_question_index]['question']
 
     answered_correctly = None
-    if correct_answer in answer:
+    fuzzy_score = fuzz.partial_ratio(answer, correct_answer)
+    if fuzzy_score > 50:
         current_score += 10
         answered_correctly = True
     else:
