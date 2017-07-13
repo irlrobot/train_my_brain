@@ -36,7 +36,7 @@ def on_launch(event_request, session):
     """when customer launches the skill via modal"""
     print("=====on_launch requestId:  " + event_request['requestId'] +
           ", sessionId=" + session['sessionId'])
-    return play_new_game(True)
+    return play_new_game(False)
 
 def on_intent(event_request, session):
     """when customer launches the skill via modal"""
