@@ -16,7 +16,6 @@ ENALP
 YADNOM
 TEKSAB
 EOHS
-EULB
 TIURF
 ATSAP
 TIBBAR
@@ -33,12 +32,9 @@ Work
 Paleontology
 Basil
 Steel
-5
 Fads
 Trim
 Pulp
-Bomb
-Pipe
 Drum
 Emily
 Tina
