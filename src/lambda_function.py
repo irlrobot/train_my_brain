@@ -50,7 +50,8 @@ def on_intent(event_request, session):
     if intent_name == "AnswerIntent":
         print("=====AnswerIntent fired...")
         if 'attributes' in session:
-            return handle_answer_request(intent, session)
+            if 'questions' in session['attributes']:
+                return handle_answer_request(intent, session)
 
         # we probably got here because user said something other than
         # yes or no after asking if they wanted to play the game again
