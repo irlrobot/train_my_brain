@@ -40,7 +40,7 @@ def handle_answer_request(intent, session):
         log_wrong_answer(current_question, answer, correct_answer)
         answered_correctly = False
 
-    format_correct_answer(current_question_category, correct_answer)
+    formatted_correct_answer = format_correct_answer(current_question_category, correct_answer)
 
     if current_question_index == game_length - 1:
         return end_game_return_score(current_score, attributes,
@@ -59,15 +59,21 @@ def handle_answer_request(intent, session):
     }
 
     if answered_correctly:
-        speech_output = "Correct, the answer was " + str(correct_answer) + ". " + speech_output
+        speech_output = "Correct, the answer was " + str(formatted_correct_answer) + \
+            ". " + speech_output
+        card_text = "The question was:\n" + current_question + \
+            "\nThe answer was " + correct_answer
+        card_title = "You Answered Correctly"
         return speech(speech_output, attributes, should_end_session, answered_correctly)
+    else:
+        speech_output = "The correct answer was " + str(formatted_correct_answer) + \
+            ". " + speech_output
+        card_text = "The question was:\n" + current_question + \
+            "\nYou said " + answer + " but the correct answer is " + correct_answer
+        card_title = "Here's What You Missed"
 
-    speech_output = "The correct answer was " + str(correct_answer) + ". " + speech_output
-    card_text = "The question was:\n" + current_question + \
-        "\nYou said " + answer + " but the correct answer is " + correct_answer
     return speech_with_card(speech_output, attributes, should_end_session,
-                            "Here's What You Missed", card_text,
-                            answered_correctly)
+                            card_title, card_text, answered_correctly)
 
 def end_game_return_score(current_score, attributes,
                           answered_correctly, last_question, answer,
@@ -106,3 +112,5 @@ def format_correct_answer(category, correct_answer):
     # if it's repeat add elipses to slow down her saying it back
     if category == 'repeat':
         return correct_answer.replace(" ", "... ")
+
+    return correct_answer
