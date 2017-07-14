@@ -28,9 +28,10 @@ def handle_answer_request(intent, session):
     current_question_index = session['attributes']['current_question_index']
     correct_answer = game_questions[current_question_index]['answer'].upper()
     current_question = game_questions[current_question_index]['question']
+    current_question_category = game_questions[current_question_index]['category']
     answered_correctly = None
 
-    fuzzy_threshold = fuzzy_match_threshold(game_questions[current_question_index]['category'])
+    fuzzy_threshold = fuzzy_match_threshold(current_question_category)
     fuzzy_score = fuzz.partial_ratio(answer, correct_answer)
 
     if fuzzy_score >= fuzzy_threshold:
@@ -40,7 +41,7 @@ def handle_answer_request(intent, session):
         log_wrong_answer(current_question, answer, correct_answer)
         # if it's a spelling_backwords question we need
         # to add spaces into the answer so she spells it out
-        if game_questions[current_question_index]['category'] == 'spelling_backwords':
+        if current_question_category == 'spelling_backwords':
             correct_answer = correct_answer.replace("", "... ")[1: -1]
         answered_correctly = False
 
