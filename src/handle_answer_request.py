@@ -7,6 +7,7 @@ github.com/irlrobot/train_that_brain
 from __future__ import print_function
 from alexa_responses import speech, speech_with_card
 from fuzzywuzzy import fuzz
+from brain_training import fuzzy_match_threshold
 
 def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""
@@ -27,10 +28,12 @@ def handle_answer_request(intent, session):
     current_question_index = session['attributes']['current_question_index']
     correct_answer = game_questions[current_question_index]['answer'].upper()
     current_question = game_questions[current_question_index]['question']
-
     answered_correctly = None
+
+    fuzzy_threshold = fuzzy_match_threshold(game_questions[current_question_index]['category'])
     fuzzy_score = fuzz.partial_ratio(answer, correct_answer)
-    if fuzzy_score > 50:
+
+    if fuzzy_score >= fuzzy_threshold:
         current_score += 10
         answered_correctly = True
     else:
