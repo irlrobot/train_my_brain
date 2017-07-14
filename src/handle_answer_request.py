@@ -64,7 +64,6 @@ def handle_answer_request(intent, session):
         card_text = "The question was:\n" + current_question + \
             "\nThe answer was " + correct_answer
         card_title = "You Answered Correctly"
-        return speech(speech_output, attributes, should_end_session, answered_correctly)
     else:
         speech_output = "The correct answer was " + str(formatted_correct_answer) + \
             ". " + speech_output
