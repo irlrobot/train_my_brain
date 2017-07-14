@@ -94,7 +94,7 @@ QUESTIONS = [
     },
     {
         "id": 14,
-        "question": "Spell the word... Blue... backwords.",
+        "question": "Spell the color... Blue... backwords.",
         "answer": "EULB",
         "category": "spelling_backwords"
     },
@@ -459,5 +459,26 @@ QUESTIONS = [
             "and... Mute...",
         "answer": "Deaf",
         "category": "word_association"
+    },
+    {
+        "id": 67,
+        "question": "Zach's 25th birthday is on July 13th... "\
+            "Melissa's 24th birthday is on July 15th..." \
+            "They'll celebrate both birthday's on the 17th..." \
+            "How old will Melissa be?",
+        "answer": "24",
+        "category": "memory_game"
+    },
+    {
+        "id": 68,
+        "question": "What word can you spell with these letters:  L... I... T... T...",
+        "answer": "Tilt",
+        "category": "word_jumble"
+    },
+    {
+        "id": 69,
+        "question": "What word can you spell with these letters:  U... M... P... L... P...",
+        "answer": "Plump",
+        "category": "word_jumble"
     }
 ]
