@@ -34,7 +34,7 @@ def handle_answer_request(intent, session):
     fuzzy_threshold = fuzzy_match_threshold(current_question_category)
     fuzzy_score = fuzz.partial_ratio(answer, correct_answer)
 
-    if fuzzy_score >= fuzzy_threshold:
+    if correct_answer in answer or fuzzy_score >= fuzzy_threshold:
         current_score += 10
         answered_correctly = True
     else:
