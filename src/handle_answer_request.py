@@ -39,14 +39,9 @@ def handle_answer_request(intent, session):
         answered_correctly = True
     else:
         log_wrong_answer(current_question, answer, correct_answer)
-        # if it's a spelling_backwords question we need
-        # to add spaces into the answer so she spells it out
-        if current_question_category == 'spelling_backwords':
-            correct_answer = correct_answer.replace("", "... ")[1: -1]
-        # if it's repeat add elipses to slow down her saying it back
-        if current_question_category == 'repeat':
-            correct_answer = correct_answer.replace(" ", "... ")
         answered_correctly = False
+
+    format_correct_answer(current_question_category, correct_answer)
 
     if current_question_index == game_length - 1:
         return end_game_return_score(current_score, attributes,
@@ -65,6 +60,7 @@ def handle_answer_request(intent, session):
     }
 
     if answered_correctly:
+        speech_output = "Correct, the answer was " + str(correct_answer) + ". " + speech_output
         return speech(speech_output, attributes, should_end_session, answered_correctly)
 
     speech_output = "The correct answer was " + str(correct_answer) + ". " + speech_output
@@ -98,3 +94,16 @@ def end_game_return_score(current_score, attributes,
 def log_wrong_answer(question, answer, correct_answer):
     """log all questions answered incorrectly so i can analyze later"""
     print("[WRONG ANSWER]:" + question + ":" + answer + ":" + correct_answer)
+
+def format_correct_answer(category, correct_answer):
+    """
+    based on the category we may need to format the correct answer
+    so she repeats it back a little slower or spells it out
+    """
+    # if it's a spelling_backwords question we need
+    # to add spaces into the answer so she spells it out
+    if category == 'spelling_backwords':
+        return correct_answer.replace("", "... ")[1: -1]
+    # if it's repeat add elipses to slow down her saying it back
+    if category == 'repeat':
+        return correct_answer.replace(" ", "... ")
