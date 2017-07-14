@@ -43,6 +43,7 @@ def handle_answer_request(intent, session):
         # to add spaces into the answer so she spells it out
         if current_question_category == 'spelling_backwords':
             correct_answer = correct_answer.replace("", "... ")[1: -1]
+        # if it's repeat add elipses to slow down her saying it back
         if current_question_category == 'repeat':
             correct_answer = correct_answer.replace(" ", "... ")
         answered_correctly = False
