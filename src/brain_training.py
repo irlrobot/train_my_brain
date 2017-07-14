@@ -29,7 +29,7 @@ def fuzzy_match_threshold(category):
     if category == 'word_association':
         return 50
     if category == 'repeat':
-        return 75
+        return 80
 
 QUESTIONS = [
     {
