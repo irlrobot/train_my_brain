@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 """
 Train My Brain
-v2.0.0
-github.com/irlrobot/train_that_brain
-"""
-"""
+github.com/irlrobot/train_my_brain
+
 Categories:
 1. word_jumble
 2. spelling_backwords

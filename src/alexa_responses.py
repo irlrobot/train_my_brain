@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 """
 Train My Brain
-v1.0.0
-github.com/irlrobot/train_that_brain
+github.com/irlrobot/train_my_brain
 """
 from __future__ import print_function
 from random import randint
