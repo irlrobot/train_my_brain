@@ -100,8 +100,8 @@ QUESTIONS = [
     },
     {
         "id": 15,
-        "question": "Spell the word... Plane... backwords.",
-        "answer": "ENALP",
+        "question": "Spell the word... Range... backwords.",
+        "answer": "EGNAR",
         "category": "spelling_backwords"
     },
     {
