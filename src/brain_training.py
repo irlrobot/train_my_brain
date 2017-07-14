@@ -14,6 +14,23 @@ Categories:
 6. word_association
 7. repeat
 """
+def fuzzy_match_threshold(category):
+    """determine the threshold for fuzzy matching"""
+    if category == 'word_jumble':
+        return 50
+    if category == 'spelling_backwords':
+        return 90
+    if category == 'simple_math':
+        return 100
+    if category == 'memory_game':
+        return 50
+    if category == 'simple_trivia':
+        return 50
+    if category == 'word_association':
+        return 50
+    if category == 'repeat':
+        return 75
+
 QUESTIONS = [
     {
         "id": 1,
