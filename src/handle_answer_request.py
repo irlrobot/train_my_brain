@@ -95,6 +95,7 @@ def end_game_return_score(current_score, attributes,
         card_text = "Your score is " + str(current_score) + " points!\n" + \
             "\nThe last question was: " + last_question + \
             "\nYou said " + answer + " but the correct answer is " + correct_answer
+        card_title = "Here's What You Missed"
     should_end_session = False
     attributes['game_status'] = "ended"
     return speech_with_card(speech_output, attributes, should_end_session,
