@@ -4,14 +4,10 @@
 # games to think about
 ## math chain
 math problems chained together
-3x1 = 3
+3x1 = 3... +2 = 5... x3 = 15
 
-+2 = 5
-
-x3 = 15
-
-etc
-
+# these 3 things
+names first two and then you say
 
 # repeat
     {
