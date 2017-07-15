@@ -496,5 +496,39 @@ QUESTIONS = [
         "question": "What word can you spell with these letters:  U... M... P... L... P...",
         "answer": "Plump",
         "category": "word_jumble"
+    },
+    {
+        "id": 70,
+        "question": "What does 3... times 1... plus 2... times 3... divided by 1... equal?",
+        "answer": "15",
+        "category": "simple_math"
+    },
+    {
+        "id": 71,
+        "question": "You've planned a three day trip to Seattle... " + \
+            "On day one, you'll visit the Space Needle... " + \
+            "On day two, you'll visit Pike Place Market..." +\
+            "On day three, you'll go to Discovery Park..." +\
+            "What city are you going to?",
+        "answer": "Seattle",
+        "category": "memory_game"
+    },
+    {
+        "id": 72,
+        "question": "How many time zones are in the continental US?",
+        "answer": "4",
+        "category": "simple_trivia"
+    },
+    {
+        "id": 73,
+        "question": "How many continents are there?",
+        "answer": "7",
+        "category": "simple_trivia"
+    },
+    {
+        "id": 74,
+        "question": "Spell the word... Friday... backwords.",
+        "answer": "YADIRF",
+        "category": "spelling_backwords"
     }
 ]
