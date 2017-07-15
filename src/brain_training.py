@@ -575,5 +575,23 @@ QUESTIONS = [
         "question": "What word doesn't belong:  bike... window... roof... door...",
         "answer": "Bike",
         "category": "out_of_place"
+    },
+    {
+        "id": 82,
+        "question": "What word doesn't belong:  cat... dog... bird... hamster...",
+        "answer": "Bird",
+        "category": "out_of_place"
+    },
+    {
+        "id": 83,
+        "question": "What word doesn't belong:  apple... tomato... banana... carrot...",
+        "answer": "Carrot",
+        "category": "out_of_place"
+    },
+    {
+        "id": 84,
+        "question": "What word doesn't belong:  wolf... lion... buffalo... fox...",
+        "answer": "Buffalo",
+        "category": "out_of_place"
     }
 ]

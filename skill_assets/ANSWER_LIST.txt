@@ -86,3 +86,6 @@ Sun
 Fish
 Rain
 Bike
+Bird
+Carrot
+Buffalo
