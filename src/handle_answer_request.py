@@ -4,7 +4,7 @@ Train My Brain
 github.com/irlrobot/train_my_brain
 """
 from __future__ import print_function
-from alexa_responses import speech, speech_with_card
+from alexa_responses import speech_with_card
 from fuzzywuzzy import fuzz
 from brain_training import fuzzy_match_threshold
 
@@ -40,12 +40,13 @@ def handle_answer_request(intent, session):
         log_wrong_answer(current_question, answer, correct_answer)
         answered_correctly = False
 
-    formatted_correct_answer = format_correct_answer(current_question_category, correct_answer)
+    formatted_correct_answer = format_correct_answer(current_question_category,
+                                                     correct_answer)
 
     if current_question_index == game_length - 1:
         return end_game_return_score(current_score, attributes,
                                      answered_correctly, current_question,
-                                     answer, correct_answer)
+                                     answer, correct_answer, formatted_correct_answer)
 
     current_question_index += 1
     speech_output = "Next question in 3... 2... 1..." +\
@@ -76,24 +77,28 @@ def handle_answer_request(intent, session):
 
 def end_game_return_score(current_score, attributes,
                           answered_correctly, last_question, answer,
-                          correct_answer):
+                          correct_answer, formatted_correct_answer):
     """if the customer answered the last question end the game"""
-    speech_output = "Brain training complete, you got  " + \
+    wrap_up = "Brain training complete, you got  " + \
         str(current_score) + " points.  Would you like to play again?"
 
     if answered_correctly:
-        card_text = "Your score is " + str(current_score) + " points!"
-    else:
-        speech_output = "The correct answer was " + str(correct_answer) +\
-            ". Brain training complete, you got  " + \
-            str(current_score) + " points.  Would you like to play again?"
+        speech_output = "Correct, the answer was " + str(formatted_correct_answer) + \
+            ". " + wrap_up
         card_text = "Your score is " + str(current_score) + " points!\n" + \
-            "\nThe last question was:\n" + last_question + \
+            "The last question was: " + last_question + \
+            "\nThe answer was " + correct_answer
+        card_title = "You Answered Correctly"
+    else:
+        speech_output = "The correct answer was " + str(formatted_correct_answer) +\
+            ". " + wrap_up
+        card_text = "Your score is " + str(current_score) + " points!\n" + \
+            "\nThe last question was: " + last_question + \
             "\nYou said " + answer + " but the correct answer is " + correct_answer
     should_end_session = False
     attributes['game_status'] = "ended"
     return speech_with_card(speech_output, attributes, should_end_session,
-                            "Results", card_text, answered_correctly)
+                            card_title, card_text, answered_correctly)
 
 def log_wrong_answer(question, answer, correct_answer):
     """log all questions answered incorrectly so i can analyze later"""
