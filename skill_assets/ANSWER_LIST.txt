@@ -79,3 +79,9 @@ Seattle
 4
 7
 YADIRF
+Basement
+Cold
+Hamburger
+Sun
+Fish
+Rain

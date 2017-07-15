@@ -11,6 +11,7 @@ Categories:
 5. simple_trivia
 6. word_association
 7. repeat
+8. out_of_place
 """
 def fuzzy_match_threshold(category):
     """determine the threshold for fuzzy matching"""
@@ -28,6 +29,8 @@ def fuzzy_match_threshold(category):
         return 50
     if category == 'repeat':
         return 80
+    if category == 'out_of_place':
+        return 50
 
 QUESTIONS = [
     {
@@ -530,5 +533,41 @@ QUESTIONS = [
         "question": "Spell the word... Friday... backwords.",
         "answer": "YADIRF",
         "category": "spelling_backwords"
+    },
+    {
+        "id": 75,
+        "question": "What word doesn't belong:  basement... ladder... steps... stairs...",
+        "answer": "Basement",
+        "category": "out_of_place"
+    },
+    {
+        "id": 76,
+        "question": "What word doesn't belong:  winter... cold... fall... summer...",
+        "answer": "Cold",
+        "category": "out_of_place"
+    },
+    {
+        "id": 77,
+        "question": "What word doesn't belong:  cookie... hamburger... pie... pudding...",
+        "answer": "Hamburger",
+        "category": "out_of_place"
+    },
+    {
+        "id": 78,
+        "question": "What word doesn't belong:  rain... snow... sleet... sun...",
+        "answer": "Sun",
+        "category": "out_of_place"
+    },
+    {
+        "id": 79,
+        "question": "What word doesn't belong:  bear... fish... cow... pig...",
+        "answer": "Fish",
+        "category": "out_of_place"
+    },
+    {
+        "id": 80,
+        "question": "What word doesn't belong:  lake... pond... rain... river...",
+        "answer": "Rain",
+        "category": "out_of_place"
     }
 ]
