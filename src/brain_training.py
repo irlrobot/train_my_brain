@@ -569,5 +569,11 @@ QUESTIONS = [
         "question": "What word doesn't belong:  lake... pond... rain... river...",
         "answer": "Rain",
         "category": "out_of_place"
+    },
+    {
+        "id": 81,
+        "question": "What word doesn't belong:  bike... window... roof... door...",
+        "answer": "Bike",
+        "category": "out_of_place"
     }
 ]
