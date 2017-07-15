@@ -62,17 +62,17 @@ Color
 Deaf
 Tilt
 Plump
-Epic Bird Taco
-Map Computer Fish
-French Boat Yesterday
-November Star Dream
-Drum Animal Mighty
-Saxophone Analysis War
-Party Fire Drink Water
-Answer Phone Cancel Shower
-Think Observe Sleep Pizza
-Pressure Pants Advance Game
-Moment Win Heat Growth
+Bird
+Map
+Boat
+Tuesday
+Animal
+War
+Drink
+Answer
+Pizza
+Pants
+Heat
 26
 15
 Seattle

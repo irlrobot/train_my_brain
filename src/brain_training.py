@@ -28,7 +28,7 @@ def fuzzy_match_threshold(category):
     if category == 'word_association':
         return 50
     if category == 'repeat':
-        return 80
+        return 50
     if category == 'out_of_place':
         return 50
 
@@ -593,5 +593,82 @@ QUESTIONS = [
         "question": "What word doesn't belong:  wolf... lion... buffalo... fox...",
         "answer": "Buffalo",
         "category": "out_of_place"
+    },
+    {
+        "id": 85,
+        "question": "Remember these words... Epic... Bird... Taco... Sphere... "\
+            "What was the second word?",
+        "answer": "Bird",
+        "category": "repeat"
+    },
+    {
+        "id": 86,
+        "question": "Remember these words... Map... Computer... Fish... Blimp... "\
+            "What was the first word?",
+        "answer": "Map",
+        "category": "repeat"
+    },
+    {
+        "id": 87,
+        "question": "Remember these words... French... Boat... Yesterday... Apple... "\
+            "What was the second word?",
+        "answer": "Boat",
+        "category": "repeat"
+    },
+    {
+        "id": 88,
+        "question": "Remember these words... November... Star... Dream... Tuesday... "\
+            "What was the last word?",
+        "answer": "Tuesday",
+        "category": "repeat"
+    },
+    {
+        "id": 89,
+        "question": "Remember these words... Drum... Animal... Mighty... Baron... "\
+            "What was the second word?",
+        "answer": "Animal",
+        "category": "repeat"
+    },
+    {
+        "id": 90,
+        "question": "Remember these words... Saxophone... Analysis... War... Trumpet... "\
+            "What was the third word?",
+        "answer": "War",
+        "category": "repeat"
+    },
+    {
+        "id": 91,
+        "question": "Remember these words... Party... Fire... Drink... Water... "\
+            "What was the third word?",
+        "answer": "Drink",
+        "category": "repeat"
+    },
+    {
+        "id": 92,
+        "question": "Remember these words... Answer... Phone... Cancel... Shower... "\
+            "What was the first word?",
+        "answer": "Answer",
+        "category": "repeat"
+    },
+    {
+        "id": 93,
+        "question": "Remember these words... Think... Observe... Sleep... Pizza... "\
+            "What was the last word?",
+        "answer": "Pizza",
+        "category": "repeat"
+    },
+    {
+        "id": 94,
+        "question": "Remember these words... Pressure... Pants... Advance... Game... "\
+            "What was the second word?",
+        "answer": "Pants",
+        "category": "repeat"
+    },
+    {
+        "id": 95,
+        "question": "Remember these words... Moment... Win... Heat... Growth... "\
+            "What was the third word?",
+        "answer": "Heat",
+        "category": "repeat"
     }
 ]
