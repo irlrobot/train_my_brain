@@ -88,16 +88,15 @@ def end_game_return_score(current_score, attributes,
         card_text = "Your score is " + str(current_score) + " points!\n" + \
             "The last question was: " + last_question + \
             "\nThe answer was " + correct_answer
-        card_title = "You Answered Correctly"
     else:
         speech_output = "The correct answer was " + str(formatted_correct_answer) +\
             ". " + wrap_up
         card_text = "Your score is " + str(current_score) + " points!\n" + \
             "\nThe last question was: " + last_question + \
             "\nYou said " + answer + " but the correct answer is " + correct_answer
-        card_title = "Here's What You Missed"
     should_end_session = False
     attributes['game_status'] = "ended"
+    card_title = "Game Results"
     return speech_with_card(speech_output, attributes, should_end_session,
                             card_title, card_text, answered_correctly)
 
