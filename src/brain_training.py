@@ -16,21 +16,21 @@ Categories:
 def fuzzy_match_threshold(category):
     """determine the threshold for fuzzy matching"""
     if category == 'word_jumble':
-        return 50
+        return 60
     if category == 'spelling_backwords':
         return 90
     if category == 'simple_math':
         return 100
     if category == 'memory_game':
-        return 50
+        return 60
     if category == 'simple_trivia':
-        return 50
+        return 60
     if category == 'word_association':
-        return 50
+        return 60
     if category == 'repeat':
-        return 50
+        return 60
     if category == 'out_of_place':
-        return 50
+        return 60
 
 QUESTIONS = [
     {
