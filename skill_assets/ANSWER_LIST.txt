@@ -89,3 +89,12 @@ Bike
 Bird
 Carrot
 Buffalo
+9
+18
+13
+3
+28
+32
+22
+1
+27
