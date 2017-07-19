@@ -12,6 +12,7 @@ Categories:
 6. word_association
 7. repeat
 8. out_of_place
+9. low_high_number
 """
 def fuzzy_match_threshold(category):
     """determine the threshold for fuzzy matching"""
@@ -31,6 +32,8 @@ def fuzzy_match_threshold(category):
         return 60
     if category == 'out_of_place':
         return 60
+    if category == 'low_high_number':
+        return 100
 
 QUESTIONS = [
     {
@@ -669,6 +672,111 @@ QUESTIONS = [
         "question": "Remember these words... Moment... Win... Heat... Growth... "\
             "What was the third word?",
         "answer": "Heat",
+        "category": "repeat"
+    },
+    {
+        "id": 96,
+        "question": "Remember these numbers... 7... 2... 11... 4... "\
+            "What was the lowest number?",
+        "answer": "2",
+        "category": "low_high_number"
+    },
+    {
+        "id": 97,
+        "question": "Remember these numbers... 3... 1... 9... 8... "\
+            "What was the highest number?",
+        "answer": "9",
+        "category": "low_high_number"
+    },
+    {
+        "id": 98,
+        "question": "Remember these numbers... 12... 15... 18... 6... "\
+            "What was the highest number?",
+        "answer": "18",
+        "category": "low_high_number"
+    },
+    {
+        "id": 99,
+        "question": "Remember these numbers... 17... 14... 15... 13... "\
+            "What was the lowest number?",
+        "answer": "13",
+        "category": "low_high_number"
+    },
+    {
+        "id": 100,
+        "question": "Remember these numbers... 3... 8... 5... 4... "\
+            "What was the lowest number?",
+        "answer": "3",
+        "category": "low_high_number"
+    },
+    {
+        "id": 101,
+        "question": "Remember these numbers... 13... 28... 18... 23... "\
+            "What was the highest number?",
+        "answer": "28",
+        "category": "low_high_number"
+    },
+    {
+        "id": 102,
+        "question": "Remember these numbers... 6... 9... 5... 2... "\
+            "What was the highest number?",
+        "answer": "9",
+        "category": "low_high_number"
+    },
+    {
+        "id": 103,
+        "question": "Remember these numbers... 37... 32... 38... 34... "\
+            "What was the lowest number?",
+        "answer": "32",
+        "category": "low_high_number"
+    },
+    {
+        "id": 104,
+        "question": "Remember these numbers... 5... 7... 1... 3... "\
+            "What was the highest number?",
+        "answer": "7",
+        "category": "low_high_number"
+    },
+    {
+        "id": 105,
+        "question": "Remember these numbers... 27... 22... 28... 25... "\
+            "What was the lowest number?",
+        "answer": "22",
+        "category": "low_high_number"
+    },
+    {
+        "id": 106,
+        "question": "Remember these numbers... 13... 28... 18... 23... "\
+            "What was the third number?",
+        "answer": "18",
+        "category": "repeat"
+    },
+    {
+        "id": 107,
+        "question": "Remember these numbers... 6... 9... 5... 2... "\
+            "What was the second number?",
+        "answer": "9",
+        "category": "repeat"
+    },
+    {
+        "id": 108,
+        "question": "Remember these numbers... 37... 32... 38... 34... "\
+            "What was the second number?",
+        "answer": "32",
+        "category": "repeat"
+    },
+    {
+        "id": 109,
+        "question": "Remember these numbers... 5... 7... 1... 3... "\
+            "What was the third number?",
+        "answer": "1",
+        "category": "repeat"
+    },
+    {
+        "id": 110,
+        "question": "Remember these numbers... 27... 22... 28... 25... "\
+            "What was the first number?",
+        "answer": "27",
         "category": "repeat"
     }
 ]
