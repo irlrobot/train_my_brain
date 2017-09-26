@@ -32,11 +32,15 @@ def speech(tts, attributes, should_end_session, answered_correctly):
     return response
 
 def speech_with_card(tts, attributes, should_end_session, card_title,
-                     card_text, answered_correctly):
+                     card_text, answered_correctly, reprompt=None):
     '''build speech output with a card'''
     print("======speech_with_card fired...")
     sound = get_sound_effect_for_answer(answered_correctly)
     prompt = prompt_sound(should_end_session)
+    if reprompt is None:
+        reprompt_tts = "Time's up!  What's your guess?"
+    else:
+        reprompt_tts = reprompt
     response = {
         "version": "1.0",
         "sessionAttributes": attributes,
@@ -60,7 +64,7 @@ def speech_with_card(tts, attributes, should_end_session, card_title,
             "reprompt": {
                 "outputSpeech": {
                     "type": "PlainText",
-                    "text": "Time's up!  What's your guess?"
+                    "text": reprompt_tts
                 }
             }
         }
