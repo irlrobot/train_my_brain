@@ -17,6 +17,9 @@ def lambda_handler(event, _context):
     if event['session']['new']:
         on_session_started({'requestId': event['request']['requestId']},
                            event['session'])
+        # this will trigger if a one shot is used
+        if event['request']['type'] == "IntentRequest":
+            return on_launch(event['request'], event['session'])
 
     if event['request']['type'] == "LaunchRequest":
         return on_launch(event['request'], event['session'])
