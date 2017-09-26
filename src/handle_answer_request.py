@@ -97,8 +97,9 @@ def end_game_return_score(current_score, attributes,
     should_end_session = False
     attributes['game_status'] = "ended"
     card_title = "Game Results"
+    reprompt = "Would you like to play again?"
     return speech_with_card(speech_output, attributes, should_end_session,
-                            card_title, card_text, answered_correctly)
+                            card_title, card_text, answered_correctly, reprompt)
 
 def log_wrong_answer(question, answer, correct_answer):
     """log all questions answered incorrectly so i can analyze later"""
