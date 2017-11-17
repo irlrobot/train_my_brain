@@ -551,13 +551,13 @@ QUESTIONS = [
     },
     {
         "id": 77,
-        "question": "What word doesn't belong:  cookie, hamburger, pie, pudding.
+        "question": "What word doesn't belong:  cookie, hamburger, pie, pudding.",
         "answer": "Hamburger",
         "category": "out_of_place"
     },
     {
         "id": 78,
-        "question": "What word doesn't belong:  rain, snow, sleet, sun.
+        "question": "What word doesn't belong:  rain, snow, sleet, sun.",
         "answer": "Sun",
         "category": "out_of_place"
     },
@@ -790,7 +790,7 @@ QUESTIONS = [
     {
         "id": 112,
         "question": "Michael is meeting Miguel for dinner at seven. " + \
-            "They had originally planned to eat Italian, but their ", + \
+            "They had originally planned to eat Italian, but their " + \
             "favorite restaurant, Al Dente, is closed today.  Instead " + \
             "they're going to try a new restaurant called Pastamore. " + \
             "What time are they going to dinner?",
@@ -803,7 +803,7 @@ QUESTIONS = [
             "His wife Melissa is going to stop at their local grocery store, " + \
             "Food Mart, to get snacks for the big game.  Melissa has to be " + \
             "at the game by 6:30pm.  What type of game are Evan and Melissa " + \
-            "going to?"
+            "going to?",
         "answer": "basketball",
         "category": "memory_game"
     }
