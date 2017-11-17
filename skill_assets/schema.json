@@ -1,0 +1,648 @@
+{
+    "languageModel": {
+      "types": [
+        {
+          "name": "ANSWER_LIST",
+          "values": [
+            {
+              "id": null,
+              "name": {
+                "value": "10",
+                "synonyms": [
+                  "ten"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "0",
+                "synonyms": [
+                  "zero",
+                  "nil"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "24",
+                "synonyms": [
+                  "twenty four"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "5",
+                "synonyms": [
+                  "five"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "78",
+                "synonyms": [
+                  "seventy eight"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "35",
+                "synonyms": [
+                  "thirty five"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "91",
+                "synonyms": [
+                  "ninety one"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "54",
+                "synonyms": [
+                  "fifty four"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "48",
+                "synonyms": [
+                  "forty eight"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "279",
+                "synonyms": [
+                  "two hundred seventy nine"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "EULB",
+                "synonyms": [
+                  "e. u. l. b."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "STAC",
+                "synonyms": [
+                  "s. t. a. c."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "NEERG",
+                "synonyms": [
+                  "n. e. e. r. g."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "YPPUP",
+                "synonyms": [
+                  "y. p. p. u. p."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "EGNAR",
+                "synonyms": [
+                  "e. g. n. a. r."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "YADNOM",
+                "synonyms": [
+                  "y. a. d. n. o. m."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "TEKSAB",
+                "synonyms": [
+                  "t. e. k. s. a. b."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "EOHS",
+                "synonyms": [
+                  "e. o. h. s."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "TIURF",
+                "synonyms": [
+                  "t. i. u. r. f."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "ATSAP",
+                "synonyms": [
+                  "a. t. s. a. p."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "TIBBAR",
+                "synonyms": [
+                  "t. i. b. b. a. r."
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Radiation",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Baseball",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Thursday",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Green Bay",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Camp",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Jump",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Pink",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Venus",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "42",
+                "synonyms": [
+                  "forty two"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Work",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Paleontology",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Basil",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Steel",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Fads",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Trim",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Pulp",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Drum",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Emily",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Tina",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "17",
+                "synonyms": [
+                  "seventeen"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Video Games",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "4",
+                "synonyms": [
+                  "four"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Phoenix",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Friday",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "2",
+                "synonyms": [
+                  "two"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Yellow",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Second",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Key",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Deck",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Trunk",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Case",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Sheet",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Tank",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Racket",
+                "synonyms": [
+                  "racquet"
+                ]
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Pipe",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Bomb",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Space",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Ship",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Circle",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Color",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Deaf",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Tilt",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Plump",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Epic Bird Taco",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Map Computer Fish",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "French Boat Yesterday",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "November Star Dream",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Drum Animal Mighty",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Saxophone Analysis War",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Party Fire Drink Water",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Answer Phone Cancel Shower",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Think Observe Sleep Pizza",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Pressure Pants Advance Game",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "Moment Win Heat Growth",
+                "synonyms": []
+              }
+            },
+            {
+              "id": null,
+              "name": {
+                "value": "26",
+                "synonyms": [
+                  "twenty six"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": [
+            "new game",
+            "start new game",
+            "play again",
+            "yes play again",
+            "play game again"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AnswerIntent",
+          "samples": [
+            "{CatchAllAnswer}"
+          ],
+          "slots": [
+            {
+              "name": "CatchAllAnswer",
+              "type": "ANSWER_LIST"
+            }
+          ]
+        },
+        {
+          "name": "GameIntent",
+          "samples": [],
+          "slots": []
+        }
+      ],
+      "invocationName": "train my brain"
+    }
+  }
