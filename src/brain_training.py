@@ -778,5 +778,33 @@ QUESTIONS = [
             "What was the first number?",
         "answer": "27",
         "category": "repeat"
+    },
+    {
+        "id": 111,
+        "question": "Sara went to the movies on Thursday with her friend Brandon.  " + \
+            "The movie they saw was called Thermal Unrest. They both wore blue " + \
+            "shirts.  What is Sara's friend's name?",
+        "answer": "Brandon",
+        "category": "memory_game"
+    },
+    {
+        "id": 112,
+        "question": "Michael is meeting Miguel for dinner at seven. " + \
+            "They had originally planned to eat Italian, but their ", + \
+            "favorite restaurant, Al Dente, is closed today.  Instead " + \
+            "they're going to try a new restaurant called Pastamore. " + \
+            "What time are they going to dinner?",
+        "answer": "seven",
+        "category": "memory_game"
+    },
+    {
+        "id": 113,
+        "question": "On Saturday, Evan is meeting his wife at a basketball game . " + \
+            "His wife Melissa is going to stop at their local grocery store, " + \
+            "Food Mart, to get snacks for the big game.  Melissa has to be " + \
+            "at the game by 6:30pm.  What type of game are Evan and Melissa " + \
+            "going to?"
+        "answer": "basketball",
+        "category": "memory_game"
     }
 ]
