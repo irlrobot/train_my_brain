@@ -188,7 +188,7 @@ QUESTIONS = [
     },
     {
         "id": 26,
-        "question": "What does 100... minus... 42... mius 13... minus... 10... equal?",
+        "question": "What does 100... minus... 42... minus 13... minus... 10... equal?",
         "answer": "35",
         "category": "simple_math"
     },
@@ -275,7 +275,7 @@ QUESTIONS = [
     {
         "id": 37,
         "question": "A recent study shows that teenagers who play video games " +\
-            "are 38 percent more likey to pass exams with a letter grade of B or " +\
+            "are 38 percent more likely to pass exams with a letter grade of B or " +\
             "higher... The study hypothesizes that the mental stimulation " +\
             "enhances cognitive abilities and makes them more capable of " +\
             "problem solving and reasoning... What did the article say " +\
