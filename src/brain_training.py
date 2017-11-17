@@ -794,7 +794,7 @@ QUESTIONS = [
             "favorite restaurant, Al Dente, is closed today.  Instead " + \
             "they're going to try a new restaurant called Pastamore. " + \
             "What time are they going to dinner?",
-        "answer": "seven",
+        "answer": "7",
         "category": "memory_game"
     },
     {
