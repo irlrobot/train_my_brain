@@ -1,3 +1,6 @@
+# last changes
+needs longer pauses for math and number/word games
+
 * add slow mode
 * polly voice
 
