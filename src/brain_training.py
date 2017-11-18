@@ -806,5 +806,15 @@ QUESTIONS = [
             "going to?",
         "answer": "basketball",
         "category": "memory_game"
+    },
+    {
+        "id": 114,
+        "question": "You've planned a three day trip to Seattle... " + \
+            "On day one, you'll visit the Space Needle... " + \
+            "On day two, you'll visit Pike Place Market..." +\
+            "On day three, you'll go to Discovery Park..." +\
+            "What day are you going to the Space Needle?",
+        "answer": "2",
+        "category": "memory_game"
     }
 ]
