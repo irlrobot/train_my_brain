@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 def speech(tts, attributes, should_end_session, answered_correctly):
-    '''build speech output'''
-    print("======speech fired...")
+    """build speech output"""
+    logger.debug("======speech fired...")
     sound = get_sound_effect_for_answer(answered_correctly)
     prompt = prompt_sound(should_end_session)
     response = {
@@ -31,19 +31,20 @@ def speech(tts, attributes, should_end_session, answered_correctly):
             }
         }
     }
-    print("=====response back to alexa service:  \n" + str(response))
+    logger.debug("=====Response to Alexa Service:  \n" + str(response))
     return response
 
 def speech_with_card(tts, attributes, should_end_session, card_title,
                      card_text, answered_correctly, reprompt=None):
-    '''build speech output with a card'''
-    print("======speech_with_card fired...")
+    """build speech output with a card"""
+    logger.debug("======speech_with_card fired...")
     sound = get_sound_effect_for_answer(answered_correctly)
     prompt = prompt_sound(should_end_session)
     if reprompt is None:
         reprompt_tts = "Time's up!  What's your guess?"
     else:
         reprompt_tts = reprompt
+
     response = {
         "version": "1.0",
         "sessionAttributes": attributes,
@@ -73,12 +74,12 @@ def speech_with_card(tts, attributes, should_end_session, card_title,
         }
     }
 
-    print("=====response back to alexa service:  \n" + str(response))
+    logger.debug("=====Response to Alexa Service:  \n" + str(response))
     return response
 
 def play_end_message():
     """play a standard message when exiting the skill"""
-    print("=====play_end_message fired...")
+    logger.debug("=====play_end_message fired...")
     standard_message = "Thanks for playing Train My Brain!  Play daily to keep "\
         "your mind muscles strong."
     review_message = "Thanks for playing Train My Brain!  "\
@@ -94,8 +95,8 @@ def play_end_message():
 
 def get_sound_effect_for_answer(answer_was_right):
     """get the appropriate sound effect"""
-    print("=====get_sound_effect_for_answer fired...")
-    print("=====answer_was_right:  " + str(answer_was_right))
+    logger.debug("=====get_sound_effect_for_answer fired...")
+    logger.debug("=====answer_was_right:  " + str(answer_was_right))
     if answer_was_right is None:
         return ""
     if answer_was_right:
