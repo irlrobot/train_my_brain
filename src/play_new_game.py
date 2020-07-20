@@ -13,14 +13,32 @@ logger.setLevel(logging.DEBUG)
 
 def play_new_game(replay):
     """play new game intro and build question bank for the session"""
-    logger.info("=====play_new_game fired...")
+    logger.debug("=====play_new_game fired...")
     if replay:
-        new_game_message = "Get ready... Starting a new game in... 3... 2... 1..."
+        new_game_message = """
+        <amazon:emotion name="excited" intensity="medium">
+        Get ready!
+        </amazon:emotion>
+        Starting the game in:
+        3 <break time="1s"/>
+        2 <break time="1s"/>
+        1 <break time="1s"/>
+        """
     else:
-        new_game_message = "Welcome to Train My Brain!  I'm going to give you six "\
-            "brain teasers and you'll only have eight seconds to answer each one... "\
-            "I won't repeat the questions so try to remember all the details...  "\
-            "Starting in...  3... 2... 1..."
+        new_game_message = """
+        <amazon:emotion name="excited" intensity="medium">
+        Welcome to Train My Brain!
+        </amazon:emotion>
+        I'm going to give you six brain teasers and you'll only have eight 
+        seconds to answer each one.
+        <break time="400ms"/>
+        I won't repeat the questions so try to remember all the details.
+        <break time="400ms"/>
+        Starting the game in:
+        3 <break time="1s"/>
+        2 <break time="1s"/>
+        1 <break time="1s"/>
+        """
     questions = pick_random_questions(6)
     speech_output = new_game_message + questions[0]['question']
     should_end_session = False
@@ -35,7 +53,7 @@ def play_new_game(replay):
 
 def pick_random_questions(num_questions):
     """pick random questions from the bank to form the game"""
-    print("=====pick_random_questions fired...")
+    logger.debug("=====pick_random_questions fired...")
     shuffle(QUESTIONS)
     questions = sample(list(QUESTIONS), k=num_questions)
 
