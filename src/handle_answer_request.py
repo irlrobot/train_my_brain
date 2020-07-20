@@ -3,10 +3,13 @@
 Train My Brain
 github.com/irlrobot/train_my_brain
 """
-from __future__ import print_function
+import logging
 from alexa_responses import speech_with_card
 from fuzzywuzzy import fuzz
 from brain_training import fuzzy_match_threshold
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""

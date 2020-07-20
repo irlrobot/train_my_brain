@@ -3,14 +3,17 @@
 Train My Brain
 github.com/irlrobot/train_my_brain
 """
-from __future__ import print_function
+import logging
 from random import sample, shuffle
 from alexa_responses import speech
 from brain_training import QUESTIONS
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
 def play_new_game(replay):
     """play new game intro and build question bank for the session"""
-    print("=====play_new_game fired...")
+    logger.info("=====play_new_game fired...")
     if replay:
         new_game_message = "Get ready... Starting a new game in... 3... 2... 1..."
     else:
