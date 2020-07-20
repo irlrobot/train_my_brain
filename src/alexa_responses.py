@@ -3,8 +3,11 @@
 Train My Brain
 github.com/irlrobot/train_my_brain
 """
-from __future__ import print_function
+import logging
 from random import randint
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 def speech(tts, attributes, should_end_session, answered_correctly):
     '''build speech output'''
