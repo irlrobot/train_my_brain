@@ -72,7 +72,7 @@ def on_intent(intent, session):
     if intent_name == "AMAZON.HelpIntent":
         logger.debug("=====HelpIntent fired...")
         tts = "During the game I'll give you 6 random brain teasers and only 8 "\
-            "seconds to anser each one... To make your mind muscles stronger, I "\
+            "seconds to answer each one... To make your mind muscles stronger, I "\
             "won't repeat any of the questions, so try to remember all the "\
             "details... You can say 'Start Over' if you'd like a new game, "\
             "or make your guess for the last question..."
