@@ -13,7 +13,7 @@ logger.setLevel(logging.DEBUG)
 
 def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""
-    print("=====handle_answer_request fired...")
+    logger.debug("=====handle_answer_request fired...")
     attributes = {}
     should_end_session = False
     if 'slots' in intent:
@@ -22,7 +22,7 @@ def handle_answer_request(intent, session):
         # if we got this far we should mark it as no response because
         # another word wasn't caught by the catchcall slot (e.g. NoIntent)
         answer = "no response"
-    print("=====answer heard was:  " + answer)
+    logger.debug("=====answer heard was:  %s", answer)
 
     game_questions = session['attributes']['questions']
     game_length = session['attributes']['game_length']
@@ -106,7 +106,7 @@ def end_game_return_score(current_score, attributes,
 
 def log_wrong_answer(question, answer, correct_answer):
     """log all questions answered incorrectly so i can analyze later"""
-    print("[WRONG ANSWER]:" + question + ":" + answer + ":" + correct_answer)
+    logger.info("[WRONG ANSWER]:" + question + ":" + answer + ":" + correct_answer)
 
 def format_correct_answer(category, correct_answer):
     """
