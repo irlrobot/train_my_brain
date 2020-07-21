@@ -2,3 +2,4 @@ Thumbs.db
 .DS_STORE
 venv/
 .vscode/
+.pytest_cache/
