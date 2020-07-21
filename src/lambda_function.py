@@ -16,8 +16,8 @@ def lambda_handler(event, _context):
     """AWS Lambda Entry Point"""
     logger.debug('=====lambda handler started...')
     logger.debug(json.dumps(event))
-    logger.info("Request ID: {}\nSession: {}".format(
-            event['request']['requestId'], event['session']))
+    logger.info("Request ID: %s\nSession: %s",
+                event['request']['requestId'], event['session'])
 
     # If a one-shot was used to start a new game
     if event['session']['new'] and event['request']['type'] == "IntentRequest":
@@ -29,12 +29,10 @@ def lambda_handler(event, _context):
     if event['request']['type'] == "SessionEndedRequest":
         return play_end_message()
 
-    # todo politely bug out and log a crash dump if we hit none of the above
-    
 def on_intent(intent, session):
     """Router for all IntentRequest's"""
     intent_name = intent['name']
-    logger.debug("=====IntentRequest: " + intent_name)
+    logger.debug("=====IntentRequest: %s", intent_name)
 
     if intent_name == "AnswerIntent":
         logger.debug("=====AnswerIntent fired...")
@@ -50,9 +48,8 @@ def on_intent(intent, session):
         logger.debug("=====GameIntent fired...")
         # If there's a session and we're in a game, treat this as an answer.
         # Unfortunately it will be wrong but it's better than starting over.
-        if 'attributes' in session and\
-            session['attributes']['game_status'] == "in_progress":
-                return handle_answer_request(intent, session)
+        if 'attributes' in session and session['attributes']['game_status'] == "in_progress":
+            return handle_answer_request(intent, session)
         return play_new_game(replay=False)
 
     if intent_name in ("AMAZON.StartOverIntent", "AMAZON.YesIntent"):
@@ -79,5 +76,5 @@ def on_intent(intent, session):
             "won't repeat any of the questions, so try to remember all the "\
             "details... You can say 'Start Over' if you'd like a new game, "\
             "or make your guess for the last question..."
-        return speech(tts, session['attributes'], 
-            should_end_session=False, answered_correctly=None)
+        return speech(tts, session['attributes'],
+                      should_end_session=False, answered_correctly=None)
