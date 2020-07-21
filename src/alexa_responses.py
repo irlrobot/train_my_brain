@@ -9,6 +9,7 @@ from random import randint
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+
 def speech(tts, attributes, should_end_session, answered_correctly):
     """build speech output"""
     logger.debug("======speech fired...")
@@ -33,6 +34,7 @@ def speech(tts, attributes, should_end_session, answered_correctly):
     }
     logger.debug("=====Response to Alexa Service:  \n%s", str(response))
     return response
+
 
 def speech_with_card(tts, attributes, should_end_session, card_title,
                      card_text, answered_correctly, reprompt=None):
@@ -77,6 +79,7 @@ def speech_with_card(tts, attributes, should_end_session, card_title,
     logger.debug("=====Response to Alexa Service:  \n%s", str(response))
     return response
 
+
 def play_end_message():
     """play a standard message when exiting the skill"""
     logger.debug("=====play_end_message fired...")
@@ -93,6 +96,7 @@ def play_end_message():
 
     return speech(tts, {}, True, None)
 
+
 def get_sound_effect_for_answer(answer_was_right):
     """get the appropriate sound effect"""
     logger.debug("=====get_sound_effect_for_answer fired...")
@@ -103,6 +107,7 @@ def get_sound_effect_for_answer(answer_was_right):
         return "<audio src=\"https://s3.amazonaws.com/trainthatbrain/correct.mp3\" />"
 
     return "<audio src=\"https://s3.amazonaws.com/trainthatbrain/wrong.mp3\" />"
+
 
 def prompt_sound(should_end_session):
     """determine if the prompt sound should play"""
