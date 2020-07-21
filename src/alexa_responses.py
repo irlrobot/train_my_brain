@@ -31,7 +31,7 @@ def speech(tts, attributes, should_end_session, answered_correctly):
             }
         }
     }
-    logger.debug("=====Response to Alexa Service:  \n" + str(response))
+    logger.debug("=====Response to Alexa Service:  \n%s", str(response))
     return response
 
 def speech_with_card(tts, attributes, should_end_session, card_title,
@@ -74,7 +74,7 @@ def speech_with_card(tts, attributes, should_end_session, card_title,
         }
     }
 
-    logger.debug("=====Response to Alexa Service:  \n" + str(response))
+    logger.debug("=====Response to Alexa Service:  \n%s", str(response))
     return response
 
 def play_end_message():
@@ -96,7 +96,7 @@ def play_end_message():
 def get_sound_effect_for_answer(answer_was_right):
     """get the appropriate sound effect"""
     logger.debug("=====get_sound_effect_for_answer fired...")
-    logger.debug("=====answer_was_right:  " + str(answer_was_right))
+    logger.debug("=====answer_was_right:  %s", str(answer_was_right))
     if answer_was_right is None:
         return ""
     if answer_was_right:
