@@ -11,6 +11,7 @@ from brain_training import QUESTIONS
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+
 def play_new_game(replay):
     """play new game intro and build question bank for the session"""
     logger.debug("=====play_new_game fired...")
@@ -50,6 +51,7 @@ def play_new_game(replay):
         "game_status": "in_progress"
     }
     return speech(speech_output, attributes, should_end_session, None)
+
 
 def pick_random_questions(num_questions):
     """pick random questions from the bank to form the game"""

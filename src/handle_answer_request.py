@@ -11,6 +11,7 @@ from brain_training import fuzzy_match_threshold
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+
 def handle_answer_request(intent, session):
     """check if the answer is right, adjust score, and continue"""
     logger.debug("=====handle_answer_request fired...")
@@ -78,6 +79,7 @@ def handle_answer_request(intent, session):
     return speech_with_card(speech_output, attributes, should_end_session,
                             card_title, card_text, answered_correctly)
 
+
 def end_game_return_score(current_score, attributes,
                           answered_correctly, last_question, answer,
                           correct_answer, formatted_correct_answer):
@@ -104,9 +106,12 @@ def end_game_return_score(current_score, attributes,
     return speech_with_card(speech_output, attributes, should_end_session,
                             card_title, card_text, answered_correctly, reprompt)
 
+
 def log_wrong_answer(question, answer, correct_answer):
     """log all questions answered incorrectly so i can analyze later"""
-    logger.info("[WRONG ANSWER]:" + question + ":" + answer + ":" + correct_answer)
+    logger.info("[WRONG ANSWER]:" + question +
+                ":" + answer + ":" + correct_answer)
+
 
 def format_correct_answer(category, correct_answer):
     """

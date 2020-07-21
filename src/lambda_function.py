@@ -12,6 +12,7 @@ from alexa_responses import play_end_message, speech
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+
 def lambda_handler(event, _context):
     """AWS Lambda Entry Point"""
     logger.debug('=====lambda handler started...')
@@ -28,6 +29,7 @@ def lambda_handler(event, _context):
         return on_intent(event['request']['intent'], event['session'])
     if event['request']['type'] == "SessionEndedRequest":
         return play_end_message()
+
 
 def on_intent(intent, session):
     """Router for all IntentRequest's"""
