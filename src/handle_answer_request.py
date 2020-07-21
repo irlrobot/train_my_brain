@@ -117,7 +117,7 @@ def format_correct_answer(category, correct_answer):
     # to add spaces into the answer so she spells it out
     if category == 'spelling_backwords':
         return correct_answer.replace("", "... ")[1: -1]
-    # if it's repeat add elipses to slow down her saying it back
+    # if it's repeat add ellipses to slow down her saying it back
     if category == 'repeat':
         return correct_answer.replace(" ", "... ")
 
