@@ -1,12 +1,17 @@
 #!/usr/bin/env python
 """
 Bundle and deploy the Lambda function
-v1.0.0
+v2.0.0
 """
+import argparse
 import shutil
 import sys
 import boto3
 from botocore.exceptions import ClientError
+
+parser = argparse.ArgumentParser()
+parser.add_argument("function", help="The name of the AWS Lambda function to update.")
+args = parser.parse_args()
 
 def publish_new_version(artifact, func_name):
     """
@@ -41,7 +46,7 @@ def main():
 
     print("Starting deploy...")
     published_new_version = publish_new_version(
-        "lambda_function.zip", "train_my_brain")
+        "lambda_function.zip", str(args.function))
 
     if published_new_version:
         print("New version successfully published!")
